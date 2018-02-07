@@ -1,9 +1,9 @@
 # opens novel file
 f = open("novel.txt", 'r') 
 
-allwordsfile = open("allwords.txt","r+" )
-uniquewordsfile = open("uniquewords.txt", "r+")
-wordfrequency = open("wordfrequency.txt", "r+")
+allwordsfile = open("allwords.txt","w+" )
+uniquewordsfile = open("uniquewords.txt", "w+")
+wordfrequency = open("wordfrequency.txt", "w+")
 
 allwords = []
 uniquewords = []
