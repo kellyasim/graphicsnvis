@@ -1,6 +1,6 @@
 # Removes punctuation marks from a string
 def parseString (st):
-  #st = st.lower()
+  st = st.lower()
   #filter string of punctuation
   s = ""
   for ch in st:
@@ -8,13 +8,9 @@ def parseString (st):
       s += ch
     else:
       s += " "
-  #filters 's from other contractions
-  #s = s.replace("' ", " ")
-  #return (s.replace("'s", ""))
 
-
+#creates the 2 lists and dictionary to be called and written
 def add_word(word):
-
   allwords.append(word)
   if word not in uniquewords:
     uniquewords.append(word)
@@ -22,7 +18,6 @@ def add_word(word):
   else:
     wordfrequency[word] += 1
   
-
 
 def main():
 # Returns a dictionary of words and their frequencies
@@ -34,33 +29,22 @@ def main():
   allwords = []
   uniquewords = []
   wordfrequency = {}
-
-
   
   for line in book:
     #filter punctuation
     line = parseString(line)
-    line = line.lower()
-    for word in line.split(' '):  
+    for word in line.split(' '):
       add_word(word)
 
-  print (uniquewords)
+  #print (uniquewords)
   book.close()    
 
 
   #allwords.write()  
-
-
-  print (dictfreq.keys())
   #uniquewords.write()
   
 
   
-  # Compare the relative frequency of uncommon words used
-  # by the two authors
-  #wordComparison (author1, wordFreq1)
-  
-
   allwords.close()  
   uniquewords.close()
   wordfreq.close()
