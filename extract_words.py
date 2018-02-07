@@ -1,3 +1,5 @@
+import re 
+
 # opens novel file
 f = open("novel.txt", 'r') 
 
@@ -18,7 +20,7 @@ def add_word(word):
 		wordfrequency[word] += 1
 	
 for line in f:
-	for word in line.split(' '):  
+	for word in re.findall('[a-z]+', line.lower()):  
 		add_word(word)
 
 
