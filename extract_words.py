@@ -17,7 +17,7 @@ def add_word(word):
 		wordfrequency[word] += 1
 	
 for line in f:
-	for word in re.findall("[a-z']+", line.lower()):  
+	for word in re.findall("[a-z]+", line.lower()):  
 		add_word(word)
 
 
