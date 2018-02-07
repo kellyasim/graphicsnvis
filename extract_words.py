@@ -23,5 +23,5 @@ for line in f:
 	for word in re.findall('[a-z]+', line.lower()):  
 		add_word(word)
 
-
+print len(uniquewords)
 
