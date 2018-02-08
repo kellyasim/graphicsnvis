@@ -35,16 +35,21 @@ def main():
 
 	#This code processes every word in the dictionary to determine 
 	#the number of words with the same frequency
+	#Also create a list of sorted keys for writing purposes
 	another_dict = {}
+	keys_list = []
 	for word, count in wordfrequency.items():
 		if count not in another_dict:
 			another_dict[count] = 1
+			keys_list.append(count)
 		else:
 			another_dict[count] += 1
+	keys_list.sort()
 
-	#Write number of appearances:frequncy to wordfrequency.txt
-	for count, freq in another_dict.items():
-		wordfrequencyfile.write(str(count) + ":"+ str(freq) + '\n')
+	#Write number of appearances:frequency to wordfrequency.txt 
+	#ordered by number of appearances
+	for elt in keys_list:
+		wordfrequencyfile.write(str(elt) + ":"+ str(another_dict[elt]) + '\n')
 
 	#close all files
 	allwordsfile.close()
