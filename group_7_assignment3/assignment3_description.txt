@@ -1,16 +1,20 @@
-> Extracting words (All)
+## NOVEL
+The novel we chose to work with is Alice's Adventures in Wonderland by Lewis Carroll
+
+## PROCESSING NOVEL AND EXTRACTING WORDS (All)
 We all started working on this project separately before we were able to met after class on Wednesday. So we got together to merge and streamline the python file and set up the github repo.
 
+The extract_words python script parses through the novel text file line by line. The add_word() function is then called on every word in the current line. We decided to use a python list to store every word in the file and a dictionary to store the unique words as a key and the number of appearances as the value. This dictionary will be used later to create the unique words and word frequency files. add_word() add every word to the allwords list and update the wordfrequency dictionary accordingly. Once the novel has been processed, the script prints the all words and unique words text files. Lastly, it creates another dictionary with the frequency as a key and the number of words with that frequency as the value and prints it to wordfrequency.txt in order of ascending frequencies. 
+
+## ALL WORDS WORDLE WORD CLOUD
+
+## DISTINCT WORDS WORD CLOUD (Bongani)
 ## REASONING FOR COLORS AND FONT
-> Novel visualization (Bongani)
-I choose the color pallete based off of Coolors.com 's palette selection. They algorthmically generated and are generally very readable. I also chose the serif font 'Abril FatFace' for its readability and halirous name for a serif font. This particular one was choosen because of its bright color selection which generally invokes playfulness just like the book 'Alice in Wonderland'. The 
+I choose the color pallete based off of Coolors.com 's pallete selection. They algorthmically generated and are generally very readable. I also chose the serif font 'Abril FatFace' for its readability and halirous name for a serif font. This particular one was choosen because of its bright color selection which generally invokes playfulness just like the book 'Alice in Wonderland'. The 
 
-> Word frequency (Abel)
+## WORD FREQUENCY VISUALIZATION (Abel)
+The word frequency graphic created by a3_wordfrequency.pde visualizes the frequency to number-of-appearances ratio as a series of rectangles. The length of a rectangle represents the number of words with a certain frequency. The frequency is represented by the order of the rectangles, where the bottom-most rectangle is the smallest frequency, The frequency then increases as the rectangles stack up.
 
-
-
-
-
-> Extra credit (Kelly)
+## EXTRA CREDIT (Kelly)
 I decided to do a dropcap style cover page using the novel.txt. 
 Each line was read in and stripped so that each word could be formatted individually and allowed for more continuous wrapping of each line in the overall block of text. The dropcap "A" font size was chosen to be 200 and the 2-6th lines of text were formatted to fit the width of the canvas after factoring in the width of the dropcap letter. The rest of the text was formatted to sit right below the dropcap letter. I chose the blue based on Alice's blue dress in the classic disney movie and the font is the classic "Alice in Wonderland" font. I chose this format for our extra credit because it reminds me of one of the first "Alice's Adventures in Wonderland" books I read.

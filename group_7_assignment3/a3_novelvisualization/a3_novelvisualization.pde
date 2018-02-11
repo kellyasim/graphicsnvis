@@ -21,7 +21,7 @@ void setup(){
   background(bg);
   font = createFont("AbrilFatface-Regular.ttf", fSize);
   textFont(font);
-  words = loadStrings("../uniquewords.txt");
+  words = loadStrings("uniquewords.txt");
 }
 
 color cPicker(){

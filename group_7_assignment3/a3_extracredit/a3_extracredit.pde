@@ -36,8 +36,7 @@ void task(){
   while (isThereRoom){
     for (String line : lines){
       String[] words = split(line, ' ');
-      
-      //each word is formatted on its own
+      //each word is placed on its own
       for (String word : words){
         float tWidth = textWidth(word) + 5;
 
@@ -120,6 +119,7 @@ void task(){
         }
 
       }
+    //linenumber += 1;
   }
 }
 }

@@ -4,8 +4,8 @@ f = open("novel.txt", 'r')
 
 #open all three files for writing
 allwordsfile = open("allwords.txt","w+" )
-uniquewordsfile = open("uniquewords.txt", "w+")
-wordfrequencyfile = open("wordfrequency.txt", "w+")
+uniquewordsfile = open("./a3_novelvisualization/uniquewords.txt", "w+")
+wordfrequencyfile = open("./a3_wordfrequency/wordfrequency.txt", "w+")
 
 allwords = []
 wordfrequency = {}
@@ -38,12 +38,12 @@ def main():
 	#Also create a list of sorted keys for writing purposes
 	another_dict = {}
 	keys_list = []
-	for word, count in wordfrequency.items():
-		if count not in another_dict:
-			another_dict[count] = 1
-			keys_list.append(count)
+	for word, freq in wordfrequency.items():
+		if freq not in another_dict:
+			another_dict[freq] = 1
+			keys_list.append(freq)
 		else:
-			another_dict[count] += 1
+			another_dict[freq] += 1
 	keys_list.sort()
 
 	#Write number of appearances:frequency to wordfrequency.txt 
