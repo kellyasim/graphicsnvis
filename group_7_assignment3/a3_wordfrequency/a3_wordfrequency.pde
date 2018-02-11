@@ -1,7 +1,7 @@
 String[] lines;
 
 void setup(){
-  lines = loadStrings("../wordfrequency.txt");
+  lines = loadStrings("wordfrequency.txt");
   surface.setResizable(true);
   int xlen = int((lines[0].split(":"))[1])*2;
   int ylen = lines.length*10;
