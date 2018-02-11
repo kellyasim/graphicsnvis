@@ -1,9 +1,8 @@
 PFont font; PFont titleFont; PFont dropFont;
 String[] lines;
 
-color black = #000000;
-color blacka = #74DBD0;
-color orange = #F4BEAB;
+color grey = #626262;
+color blue = #25AAFF;
 
 int width = 850;
 int height = 750;
@@ -14,7 +13,7 @@ int dropSize = 200;
 boolean isThereRoom = true;
 
 void setup(){
-  size(1000,750);
+  size(870,750);
   background(#FFFFFF);
   
   //different fonts
@@ -52,17 +51,18 @@ void task(){
         }
           
         //check to see if canvas height is reached
-        if (spaceTakenHeight <= height){
+        if (spaceTakenHeight - 100<= height){
+          fill(grey);
           
           //Title
           if (linenumber == 0 && counter <= 4){
-            fill (black);
+            fill(blue);
             textFont(titleFont);
             text(word, spaceTakenWidth, spaceTakenHeight);
             spaceTakenWidth += tWidth +55;
+          
           //Chapter1            
           } else if(linenumber == 1 && counter >= 6 && counter <= 10){
-            fill (black);
             textFont(titleFont);
             //spaceTakenHeight += fSize;
             text(word,spaceTakenWidth,spaceTakenHeight);
@@ -70,14 +70,14 @@ void task(){
 
           //DropCap
           } else if (linenumber == 2 && counter == 0){
-            fill (black);
+            fill (blue);
             spaceTakenHeight += titleSize + 120;
             textFont(dropFont);
             String first = word.substring(0,1);
             text(first, spaceTakenWidth + 10, spaceTakenHeight);
             
           //rest of Alice  
-            fill(orange);
+            fill (grey);
             textFont(font);
             String restOfLine = word.substring(1);
             text(restOfLine, spaceTakenWidth + 165, spaceTakenHeight - 100);
@@ -86,14 +86,21 @@ void task(){
             
           //around Dropcap
           } else if (linenumber >= 2 && linenumber <= 6 && counter >= 0){
-            fill(orange);
+            fill(grey);
             textFont(font);
             text(word, spaceTakenWidth + 165, spaceTakenHeight- 100);
             spaceTakenWidth += tWidth + 5;
-          
+            
+            //adjust the width cut off to account for the dropcap
+            if (!(spaceTakenWidth + tWidth <= width - 163)){
+              spaceTakenWidth = 10;
+              spaceTakenHeight += fSize +5;
+              counter = 0;
+              linenumber += 1;
+            }
+            
           //All other text
           } else if (linenumber >= 7){
-            fill(black);
             textFont(font);
             text(word, spaceTakenWidth, spaceTakenHeight - 100);
             spaceTakenWidth += tWidth + 5;            
@@ -101,7 +108,6 @@ void task(){
             
           //other heading text
           }else{
-            fill(orange);
             textFont(font);
             text(word, spaceTakenWidth, spaceTakenHeight);
             spaceTakenWidth += tWidth;
