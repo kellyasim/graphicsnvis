@@ -5,5 +5,4 @@ Open the a3_novelvisualization.pde file and click run to create the “unique wo
 
 Open the a3_wordfrequency.pde file and click run to create the “word frequency” visualization. 
 
-Open the a3_extracredit.pde file and click run to create a visually pleasing 
-presentation of the beginning of the novel. 
+Open the a3_extracredit.pde file and click run to create a visually pleasing presentation of the beginning of the novel. 
