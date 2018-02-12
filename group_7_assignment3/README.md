@@ -1,7 +1,7 @@
 Using the command line, navigate to the directory containing the python file and execute 
 the command “python extract_words.py” to run the script and create the necessary text files.
 
-Open the a3_novelvisualization.pde file and click run to create the “unique words” word cloud.
+Open the a3_novelvisualization.pde file and click run to create the “unique words” word cloud. Clicking on the generated graphic will load a new word cloud.
 
 Open the a3_wordfrequency.pde file and click run to create the “word frequency” visualization. 
 
