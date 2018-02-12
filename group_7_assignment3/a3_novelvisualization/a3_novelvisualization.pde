@@ -57,16 +57,17 @@ void task(){
       
       spaceTakenWidth += tWidth;
       
-      println(word);
     } else {
       isThereRoom = false;
     }
   }
 }
 
+void mouseClicked() {
+  background(bg);  
+ isThereRoom = true;
+}
   
 void draw() {
   task();
-  noLoop();
-
 }
