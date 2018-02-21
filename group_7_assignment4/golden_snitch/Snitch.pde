@@ -2,8 +2,8 @@ class Snitch {
   float x, y, initialx, initialy;
   PVector speed;
   int wingAngle = -15;
-  int angleChange = 3; //rate of wings flapping
-  final int ANGLE_LIMIT = 40;
+  int angleChange = 35; //rate of wings flapping
+  final int ANGLE_LIMIT = 30;
   
   Snitch (float x, float y, PVector speed){
    this.x = x;
@@ -26,45 +26,45 @@ class Snitch {
   }
   
   void drawSnitch(){
+    pushMatrix();
+    translate(x, y);
     drawLWing();
     drawRWing();
     fill(255, 255, 0);//yellow
     strokeWeight(1);
     stroke(245, 235, 0, 255); //gold
-    ellipse(x, y, 20, 20); //ball
+    ellipseMode(CENTER);
+    ellipse(0, 0, 20, 20); //ball
+    popMatrix();
 }
   void drawLWing(){
     pushMatrix();
-    translate(x-3, y);
     rotate(radians(wingAngle));
     fill(255);
     stroke(0); //black
-    //bezier(0, 40, 0, 70, 30, 56, 50, 70); //left wing
-    bezier(x-155,y-137,x-155,y-107,x-125,y-121,x-105,y-107);
-    line(x-155, y-137, x-105, y-107);
+    bezier(-53,-33,-53,-3,-23,-17,-3, -3); 
+    line(-53, -33, -3, -3); 
     popMatrix();
   }
   void drawRWing(){
     pushMatrix();
-    translate(x+3,y);
     rotate(radians(-wingAngle));
-    //bezier(50, 70, 70, 56, 100, 70, 100, 40); //right wing
-    bezier(x-95, y-107, x-80, y-121, x-50, y-107, x-50, y-137);
-    line(x-95, y-107, x-50, y-137);
+    bezier(0, -3, 20, -17, 50, -3, 50, -33);
+    line(0, -3, 50, -33); 
     popMatrix();
   }
   
   void move(){
-    //if (this.x < 300){
-    //  x += this.speed.x;
-    //} else{
-    //  this.x = this.initialx; 
-    //}
+    if (this.x < (this.initialx+100)){
+      x += this.speed.x;
+    } else{
+      this.x = this.initialx; 
+    }
       
-    //if (this.y < 300){
-    //  y += this.y; 
-    //} else{
-    //  this.y = this.initialy;
-    //}
+    if (this.y < (this.initialy+100)){
+      y += this.speed.y; 
+    } else{
+      this.y = this.initialy;
+    }
   }
 }

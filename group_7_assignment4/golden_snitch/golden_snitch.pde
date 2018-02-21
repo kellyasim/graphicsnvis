@@ -6,7 +6,7 @@ void setup(){
   frameRate(30);
   PVector p = new PVector (5, 4);
   
-  gs = new Snitch (100, 100, p);
+  gs = new Snitch (150, 150, p);
 }
 
 
