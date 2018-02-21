@@ -1,12 +1,12 @@
 Snitch gs;
 
 void setup(){
-  size(700, 700);
+  size(500, 500);
   smooth();
   frameRate(30);
   PVector p = new PVector (5, 4);
   
-  gs = new Snitch (400, 100, p);
+  gs = new Snitch (100, 100, p);
 }
 
 
