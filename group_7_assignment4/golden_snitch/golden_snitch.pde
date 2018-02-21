@@ -2,6 +2,8 @@ Snitch gs;
 
 void setup(){
   size(700, 700);
+  smooth();
+  frameRate(30);
   PVector p = new PVector (5, 4);
   
   gs = new Snitch (400, 100, p);
