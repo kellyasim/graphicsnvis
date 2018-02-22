@@ -1,0 +1,20 @@
+Group 7, Assignment4
+
+
+	We chose to do a Qudditch game fully fitted with a golden snitch, two quidditch players and the crowd in the background. 
+
+
+> Audience (Abel)
+	There will also be a crowd of spectators in the stands jumping randomly with randomly assigned colored shirts representing their house colors. To create the main animation for the crowd, the background would loop with the audience coming on and off screen to create a 15 second gif over a static green grass and blue sky background. 
+
+
+> Golden Snitch (Kelly)
+	The golden snitch moves seemingly randomly within a small box. This was achieved by moving the snitch using a PVector but resetting the snitch to the initial x or y coordinate when it reaches the edge of the box. The wings of the snitch rotate about the "shoulder" hinge from -15 degrees to 30 degrees incrementing by 35 degrees to create the illusion of fluttering wings without making it look too busy. 
+
+
+> Quidditch Player (Bongani)
+	There are two players bobbing in the right corner of the screen with the larger player’s scarf blowing in the wind as the sub-animation. 
+
+
+> Extra Credit: Cheering Crowd (Kelly)
+
