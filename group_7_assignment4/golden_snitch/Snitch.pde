@@ -1,13 +1,15 @@
 class Snitch {
   float x, y, initialx, initialy;
+  color c;
   PVector speed;
   int wingAngle = -15;
   int angleChange = 35; //rate of wings flapping
   final int ANGLE_LIMIT = 30;
   
-  Snitch (float x, float y, PVector speed){
+  Snitch (float x, float y, color c, PVector speed){
    this.x = x;
    this.y = y;
+   this.c = c;
    this.initialx = x;
    this.initialy = y;
    this.speed = speed;    
@@ -30,7 +32,7 @@ class Snitch {
     translate(x, y);
     drawLWing();
     drawRWing();
-    fill(255, 255, 0);//yellow
+    fill (c);
     strokeWeight(1);
     stroke(245, 235, 0, 255); //gold
     ellipseMode(CENTER);
@@ -55,16 +57,19 @@ class Snitch {
   }
   
   void move(){
-    if (this.x < (this.initialx+100)){
+    if (this.x > (this.initialx+100) || this.x < this.initialx){
+      this.speed.x = -this.speed.x;
       x += this.speed.x;
     } else{
-      this.x = this.initialx; 
+      x += this.speed.x;
+
     }
       
-    if (this.y < (this.initialy+100)){
+    if (this.y > (this.initialy+100) || this.y < this.initialy){
+      this.speed.y = -this.speed.y;      
       y += this.speed.y; 
     } else{
-      this.y = this.initialy;
+      y += this.speed.y;
     }
   }
 }
