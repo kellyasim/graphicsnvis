@@ -31,7 +31,8 @@ class PersonObject extends AnimateObject {
   void animate(){
     this.x+= speed;
     if(this.x > width || this.x < -67) {
-      this.speed = -this.speed;
+      //this.speed = -this.speed;
+      this.x = -300;
     }
     if(frameCount % 100 == 0) {
       direction = !direction;
