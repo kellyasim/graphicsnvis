@@ -1,14 +1,15 @@
 CrowdMember p1;
 Crowd audience;
-
+PersonObject person;
 
 
 void setup(){
   //p1 = new CrowdMember(50,50);
   audience = new Crowd();
+  person = new PersonObject();
   audience.populate();
   size(700,700);
-  frameRate(10);
+  //frameRate(10);
 }
 
 void draw(){
@@ -19,5 +20,6 @@ void draw(){
   audience.display();
   //p1.display();
   audience.update();
+  person.animate();
   //p1.update(frameCount);
 }
