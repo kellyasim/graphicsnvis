@@ -23,8 +23,18 @@ class PersonObject extends AnimateObject {
     this.y = 0;
     arm = new Arm(345, 0);
     shape(person, this.x, this.y);
+    direction = (random(0,100) % 2 == 0)? true : false;
+    this.speed = random(1, 4);
+  }
+  
+  PersonObject(int x, int y) {
+    person = loadShape("person.svg");
+    this.x = x;
+    this.y = y;
+    arm = new Arm(x + 345, y + 0);
+    shape(person, this.x, this.y);
     direction = true;
-    this.speed = 1.5;
+    this.speed = random(1, 4);
   }
   
   
@@ -33,19 +43,19 @@ class PersonObject extends AnimateObject {
     if(this.x > width ) {
       //this.speed = -this.speed;
       this.x = -300;
-    this.speed = 1.5;
+    this.speed = random(1, 4);
     }
     if(frameCount % 100 == 0) {
       direction = !direction;
     }
     
     if(frameCount % 20 == 0) {
-      this.speed += 2.4;
+      this.speed += random(1, 4);
     }
     if(direction) {  
-      this.y += 2.3;
+      this.y += random(2, 5);
     } else {
-      this.y -= 2.3;
+      this.y -= random(2, 5);
     }
     arm.animate(this.x, this.y);
     shape(person, this.x, this.y);

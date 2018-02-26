@@ -3,14 +3,16 @@ SoundFile cheer;
 Crowd audience1;
 Crowd audience2;
 PersonObject person;
+PersonObject otherPerson;
 Snitch gs; Snitch gs2; 
 
 void setup(){
-  cheer = new SoundFile(this, "soccer_stadium.wav");
-  cheer.play();
+  //cheer = new SoundFile(this, "soccer_stadium.wav");
+  //cheer.play();
   audience1 = new Crowd(1100);
   audience2 = new Crowd(1500);
   person = new PersonObject();
+  otherPerson = new PersonObject(125, 125 );
   size(1000,700);
   
   //kelly's code
@@ -30,6 +32,7 @@ void draw(){
   audience1.update();
   audience2.update();
   person.animate();
+  otherPerson.animate();
   gs.display();
   gs.move(); //move randomly in a box, wings flutter
   gs2.display();
