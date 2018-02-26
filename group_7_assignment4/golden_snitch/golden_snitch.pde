@@ -11,8 +11,8 @@ void setup(){
   color yellow = color(255, 255, 0);
   color blue = color (0, 150, 200);
   
-  file = new Crowd(this, "soccer_stadium.wav");
-  file.loop();
+  //file = new Crowd(this, "soccer_stadium.wav");
+  //file.loop();
   
   gs = new Snitch (150, 150, yellow, p);
   gs2 = new Snitch (500, 200, blue, q);

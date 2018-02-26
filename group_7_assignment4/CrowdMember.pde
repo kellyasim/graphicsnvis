@@ -21,13 +21,15 @@ class CrowdMember{
     if(xpos < -400){
       xpos = 1100;
     }
-    if(up){
-      ypos+=5;
-      up = false;
-    }
-    else{
-      ypos-=5;
-      up = true;
+    if(frameCount % 6 <= 2){
+      if(up){
+        ypos+=5;
+        up = false;
+      }
+      else{
+        ypos-=5;
+        up = true;
+      }
     }
   }
   
