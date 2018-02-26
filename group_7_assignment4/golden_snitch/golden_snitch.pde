@@ -1,4 +1,6 @@
-Snitch gs; Snitch gs2;
+Snitch gs; Snitch gs2; 
+import processing.sound.*;
+AudioIn file;
 
 void setup(){
   size(700, 700);
@@ -8,6 +10,9 @@ void setup(){
   PVector q = new PVector (-5, -10);
   color yellow = color(255, 255, 0);
   color blue = color (0, 150, 200);
+  
+  file = new Crowd(this, "soccer_stadium.wav");
+  file.loop();
   
   gs = new Snitch (150, 150, yellow, p);
   gs2 = new Snitch (500, 200, blue, q);
