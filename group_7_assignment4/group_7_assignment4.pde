@@ -7,15 +7,13 @@ PersonObject otherPerson;
 Snitch gs; Snitch gs2; 
 
 void setup(){
-  //cheer = new SoundFile(this, "soccer_stadium.wav");
-  //cheer.play();
+  cheer = new SoundFile(this, "soccer_stadium.wav");
+  cheer.play();
   audience1 = new Crowd(1100);
   audience2 = new Crowd(1500);
   person = new PersonObject();
   otherPerson = new PersonObject(125, 125 );
   size(1000,700);
-  
-  //kelly's code
   PVector p = new PVector (5, 4);
   PVector q = new PVector (-5, -10);
   color yellow = color(255, 255, 0);

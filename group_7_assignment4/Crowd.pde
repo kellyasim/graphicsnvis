@@ -10,7 +10,7 @@ class Crowd{
   color red = color(#cb3030);
   color green = color(#359c35);
   color yellow = color(#e1e34d);
-  color orange = color(#e3aa3a);
+  color orange = color(#cc5500);
   color[] colors = {blue, red, green, yellow, orange};
   
   Crowd(int start){

@@ -5,7 +5,7 @@ Group 7, Assignment4
 
 
 > Audience (Abel)
-	There will also be a crowd of spectators in the stands jumping randomly with randomly assigned colored shirts representing their house colors. To create the main animation for the crowd, the background would loop with the audience coming on and off screen to create a 15 second gif over a static green grass and blue sky background. 
+	There will also be a crowd of spectators in the stands jumping randomly, with randomly assigned colored shirts representing their house colors (and a fifth house whose color is burnt orange). To create the main animation for the crowd, the background would loop with the audience coming on and off screen to create the illusion of movement over a static green grass and blue sky background. The crowd is made up of two classes. The CrowdMember object represents a single person who has the ability to jump. The Crowd object is made up of 50 CrowdMember objects cheering in the stands with a tower in the background. Both of these classes have the ability to move in order to give the background a scrolling effect.
 
 
 > Golden Snitch (Kelly)
@@ -16,5 +16,6 @@ Group 7, Assignment4
 	There are two players bobbing in the right corner of the screen with the larger player’s scarf blowing in the wind as the sub-animation. 
 
 
-> Extra Credit: Cheering Crowd (Kelly)
-
+> Extra Credit: Cheering Crowd
+	A sound clip of a crowd cheering at football game plays during the animation.
+	This presented some problems as trying to create a SoundFile object would result in an error stating it did not exist and suggesting to check the path. This was resolved by creating a directory called "data" and placing the .wav file in it. This step was not made clear in the tutorials online.
