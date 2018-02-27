@@ -1,7 +1,7 @@
 Group 7, Assignment4
 
 
-	We chose to do a Qudditch game fully fitted with a golden snitch, two quidditch players and the crowd in the background. 
+	We chose to do a Qudditch game fully fitted with a golden snitch, a blue snitch, two racing quidditch players and the two stands of crowdmembers in the background. 
 
 
 > Audience (Abel)
@@ -9,13 +9,13 @@ Group 7, Assignment4
 
 
 > Golden Snitch (Kelly)
-	The golden snitch moves seemingly randomly within a small box. This was achieved by moving the snitch using a PVector but resetting the snitch to the initial x or y coordinate when it reaches the edge of the box. The wings of the snitch rotate about the "shoulder" hinge from -15 degrees to 30 degrees incrementing by 35 degrees to create the illusion of fluttering wings without making it look too busy. 
+	The golden snitch is created using an ellipse and two bezeir curves for the wings. A second snitch was added but colored blue and the PVector works in negative numbers rather than positive. The wings of the snitch rotate about the "shoulder" hinge from -15 degrees to 30 degrees incrementing by 35 degrees to create the illusion of fluttering wings without making it look too busy. Both snitches move using a PVector and letting it bounch within a set box.
 
 
 > Quidditch Player (Bongani)
-	There are two players bobbing in the right corner of the screen with the larger player’s scarf blowing in the wind as the sub-animation. 
+	There are two quidditch players racing across the screen from left to right with both players' arms reaching for an unspecified object. The players were drawn in Adobe Illustrator and imported into the program as .svg files. Animations were done with an Arm and a personObject class in order to move each part of the player separately.
 
 
-> Extra Credit: Cheering Crowd
-	A sound clip of a crowd cheering at football game plays during the animation.
+> Extra Credit: Cheering Crowd (Abel)
+	A sound clip of a crowd cheering at football (soccer) game plays during the animation.
 	This presented some problems as trying to create a SoundFile object would result in an error stating it did not exist and suggesting to check the path. This was resolved by creating a directory called "data" and placing the .wav file in it. This step was not made clear in the tutorials online.
