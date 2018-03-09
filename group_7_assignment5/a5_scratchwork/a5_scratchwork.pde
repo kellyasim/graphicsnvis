@@ -6,7 +6,7 @@ void setup() {
 }
 
 void draw() {
-  camera(400, 150, 300,
+  camera(400, 50, 300,
          mouseX, mouseY, 0,
          0, 1, 0);
   
