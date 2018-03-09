@@ -1,8 +1,8 @@
-Frame test;
-Cylinder c1;
+AbelMobile m1;
+
 void setup() {
   size(1000, 1000, P3D);
-  test = new Frame(0,-400,-20, 100);
+  m1 = new AbelMobile(0,-400,-20, 100, 2*PI/80);
 }
 
 void draw() {
@@ -11,7 +11,7 @@ void draw() {
          0, 1, 0);
   
   draw_background();
-  test.animate();
+  m1.animate();
 }
  
 void draw_background(){
@@ -19,5 +19,4 @@ void draw_background(){
   translate(400,300,-200);
   box(900);
   translate(0,0,0);
-  //sphere(50);
 }
