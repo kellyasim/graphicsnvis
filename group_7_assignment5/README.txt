@@ -1,0 +1,1 @@
+Press the "play" button to display the animation
