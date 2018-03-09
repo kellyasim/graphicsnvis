@@ -1,38 +1,36 @@
-class AbelMobile extends Frame{
+class BirdMobile extends Frame{
   Frame f1;
   int len;
-  PShape bird;
+  PShape b1;
+  PShape b2;
   float spin_speed, rotate;
-  AbelMobile(int x, int y, int z, int hanging_length, float speed){
+  BirdMobile(int x, int y, int z, int hanging_length, float speed){
     f1 = new Frame(x, y, z, hanging_length, speed);
     len = hanging_length;
     spin_speed = speed;
-    bird = loadShape("bird.obj");
-    bird.rotateZ(1.5);
+    b1 = loadShape("bird.obj");
+    b1.rotateZ(1.5);
+    b2 = loadShape("bird.obj");
+    b2.rotateZ(1.5);
     float scale = 1;
-    bird.scale(scale, scale, scale);
+    b1.scale(scale, scale, scale);
+    b2.scale(scale, scale, scale);
   }
   
   void animate(){
     f1.animate();
     
-    //item 1
-    pushMatrix();
-    translate(len/2,len,0);
-    rotateX(rotate/2);
-    fill(0);
-    box(30);
-    popMatrix();
     
+    pushMatrix();
+    b2.rotateX(.05);
+    shape(b2, len/2,len, b2.width, b2.height);
+    popMatrix();
 
     // item 2
     pushMatrix();
-    translate(len/2,-len,0);
-    rotateX(rotate/2);
-    fill(50);
-    box(40);
+    b1.rotateX(.05);
+    shape(b1, len/2,-len, b1.width, b1.height);
     popMatrix();
-    
     
     
     

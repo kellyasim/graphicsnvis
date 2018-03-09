@@ -1,8 +1,10 @@
 AbelMobile m1;
-
+BirdMobile m2;
 void setup() {
   size(1000, 1000, P3D);
   m1 = new AbelMobile(-100,-400,-20, 110, 2*PI/200);
+  
+  m2 = new BirdMobile(100,-500,-50, 110, 2*PI/200);
 }
 
 void draw() {
@@ -11,6 +13,7 @@ void draw() {
          0, 1, 0);
   draw_background();
   m1.animate();
+  m2.animate();
 }
  
 void draw_background(){
