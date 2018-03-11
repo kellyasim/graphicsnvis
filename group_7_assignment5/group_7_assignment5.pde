@@ -1,6 +1,6 @@
 AbelMobile m1;
 BirdMobile m2;
-BagelMobile m3;
+BagelMobile m3; miniBagelMobile m4;
 
 void setup() {
   size(1500, 1000, P3D);
@@ -11,6 +11,7 @@ void setup() {
   m2 = new BirdMobile(250,-380,-20, 110, 2*PI/200);
   
   m3 = new BagelMobile(-100, -350, -60, 170, -2*PI/400);
+  m4 = new miniBagelMobile(-100, -250, -60, 80, 2*PI/200);
 }
 
 void draw() {
@@ -21,6 +22,7 @@ void draw() {
   m1.animate();
   m2.animate();
   m3.animate();
+  m4.animate();
 }
  
 void draw_background(){
