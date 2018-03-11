@@ -1,0 +1,16 @@
+
+Assignment 5-Group 7
+
+	For this assignment we chose to create an exhibit style scene ofa museum of modern art drawing inspiration from Alexander Calder. The animation will depict three distinct rotating mobiles hanging from the ceiling. As the main and sub-animations will be the rotation of the mobiles on each of their y-axes and each suspended object will spin independently of each other and the mobile itself. We expect the animation to loop seamlessly and should therefore animate indefinitely. Abel worked to create the generic "Mobile" class with input and debugging help from Bongani and Kelly. From this main class, each person built their specific mobile and varied the types of items hanging off their mobile.
+
+Mobile class + AbelMobile(Abel)
+	Abel worked out the generic mainframe of the mobiles using a Frame class with cylinder subclasses to form the wires of the frame. He also created his own mobile with cubes that rotate.
+
+BirdMobile(Bongani)
+	Bongani loaded in a bird object as the special item and added spheres to his mobile. 
+
+BagelMobile(Kelly)
+	Kelly loaded in a bagel object as the special item and played with the rotation direction and speed of the mobile. She also reorganized the scene so that every object could rotate without bumping into any of the other ones.
+
+Extra Credit: Objects
+	Both the birds and bagels/donuts/cheerios are .obj's.

@@ -1,1 +1,1 @@
-Press the "play" button to display the animation
+Press the "play" button to display the animation, file takes a bit to load. Please be patient.
