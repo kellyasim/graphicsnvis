@@ -9,8 +9,8 @@ Mobile class + AbelMobile(Abel)
 BirdMobile(Bongani)
 	Bongani loaded in a bird object as the special item and added spheres to his mobile. 
 
-BagelMobile(Kelly)
-	Kelly loaded in a bagel object as the special item and played with the rotation direction and speed of the mobile. She also reorganized the scene so that every object could rotate without bumping into any of the other ones.
+BagelMobile + miniBagelMobile(Kelly)
+	Kelly created a two-tiered mobile by stacking two frame classes together and animated them separately. She loaded in a bagel object as the special item and played with the rotation direction and speed of the mobile. She also reorganized the scene so that every object could rotate without bumping into any of the other ones.
 
 Extra Credit: Objects
 	Both the birds and bagels/donuts/cheerios are .obj's.
