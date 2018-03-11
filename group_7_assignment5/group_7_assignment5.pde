@@ -8,9 +8,9 @@ void setup() {
 
   m1 = new AbelMobile(-230,-400,-20, 80, 2*PI/200);
   
-  m2 = new BirdMobile(250,-380,-50, 110, 2*PI/200);
+  m2 = new BirdMobile(250,-380,-20, 110, 2*PI/200);
   
-  m3 = new BagelMobile(-100, -350, -20, 170, -2*PI/400);
+  m3 = new BagelMobile(-100, -350, -60, 170, -2*PI/400);
 }
 
 void draw() {
