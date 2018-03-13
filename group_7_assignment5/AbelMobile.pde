@@ -19,7 +19,7 @@ class AbelMobile extends Frame{
     //item 1
     pushMatrix();
     translate(len/2,len,0);
-    rotateX(rotate/2);
+    rotateX(-rotate/2);
     fill(0);
     box(30);
     popMatrix();
@@ -39,7 +39,7 @@ class AbelMobile extends Frame{
     //item 3
     pushMatrix();
     translate(len/2,0,len);
-    rotateX(rotate*2);
+    rotateX(-rotate*2);
     fill(100);
     box(50);
     popMatrix();
