@@ -1,0 +1,17 @@
+Inspired by watching dust fall in a ray of light, we decided to create a 3D scene to bring in a directional light from one of the top corners of the screen. Since the assignment calls for more complex shapes, we may simplify the scenario to a 2D scene substituting various snowflake graphics. The intended simulation would have ambient lighting with the vector snowflake graphic falling from the sky. The forces we decided upon were gravity and impulse from falling snowflakes and the disturbance of snowflakes of dragging a mouse across the screen, respectively. The simulation would need to load small vector snowflakes with a random x value at the top of the screen. The snowflakes would have masses corresponding with their relative size and fall with the force of gravity. 
+
+Given enough time, code could be added to cause snowflakes to shimmer in the light and rotate as they fall, creating a very peaceful scene. 
+
+The interactivity we chose to implement would add an additional force (impulse force) caused in part by the click and drag of the mouse. As the cursor is dragged across the scenario, the snowflakes would theoretically take up the acceleration of the cursor and be swept/spun in the air. After the snowflakes disappear off the bottom of the screen, the initial x value should be called and y value should be reset at the top of the screen to provide a continuous loop.
+
+There will be a snowflake class with their respective coordinates and velocity vectors; an interactivity class that records the cursor coordinates and cursor speed which will influence the movement of snowflakes. Each of these classes will need mathematical input to simulate physics, and the snowflake class would create the snowflake shape. Overall the project seems rather simple besides the interactions with the cursor being swept across the screen.
+
+
+Abel-
+mouse interactivity/animation artifact (EC)
+
+Bongani- 
+particle physics and movement, looping mechanism of simulation
+
+Kelly- 
+base movement (state one without mouse)
