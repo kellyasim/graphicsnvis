@@ -3,7 +3,7 @@ class Snowflake(){
   PVector position;
   PVector velocity;
   PVector acceleration;
-  
+  PShape[] snowflakes;
   float mass;
   //snowflakes;
   
@@ -12,10 +12,16 @@ class Snowflake(){
     position = new PVector(x, y);
     velocity= new PVector(0,0);
     acceleration = new PVector(0,0);
-    PShape snowflake1 = loadShape("blueflake.png");
-    PShape snowflake2 = loadShape("hexflake.png");
-    PShape snowflake3 = loadShape("simpleflake.png");
-    PShape snowflake4 = loadShape("snowflake.png");
+    snowflaskes[0] = loadShape("blueflake.png");
+    snowflaskes[1] = loadShape("hexflake.png");
+    snowflaskes[2] = loadShape("simpleflake.png");
+    snowflaskes[4] = loadShape("snowflake.png");
+    
+    
+  }
+  
+  Pshape create() {
+    return snowflakes[int(random(4));
   }
   
   //class method to apply forces

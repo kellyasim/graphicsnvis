@@ -14,7 +14,7 @@ void setup(){
 
 void draw(){
   background(0);
-  for (snowflake flake :snowflakes){
+  for (snowflake flake : snowflakes){
     PVector gravity = new PVector(0,0.1*flake.m);
     //Apply gravvity
     flake.applyForce(gravity);
