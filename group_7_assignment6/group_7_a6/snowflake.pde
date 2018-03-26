@@ -25,14 +25,6 @@ class Snowflake{
     acceleration.add(f);
   }
   
-  /*void applyForces(float fx, float fy){
-  ax = fx/m;
-  ay=fy/m;
-  vx +=ax;
-  vy+=ay;
-  x+=vx;
-  y+=vy;
-  }*/
   
   void update(){
     //velocity changes according to acceleration
@@ -42,7 +34,7 @@ class Snowflake{
     //clear acceleration
     acceleration.mult(0);
   }
-  
+  //Respawns snowflakes at the top of the screen with random new x and y value
   void checkEdges(){
     if(position.x < -60 || position.x > 860 || position.y > 760){
       position.x = int(random(801));
@@ -54,7 +46,7 @@ class Snowflake{
     }
   }
   
-  //draw snowflake
+  //draw snowflakes
   void display(){
     image(snowflake_type, position.x, position.y);
   }

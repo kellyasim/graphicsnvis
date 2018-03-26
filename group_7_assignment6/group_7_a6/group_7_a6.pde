@@ -5,7 +5,7 @@
 //bottom of screen recall initial x and y
 
 //initializing all 50 snowflakes, randomly choose one of the 4 patterns
-Snowflake[] snowflakes = new Snowflake[50];
+Snowflake[] snowflakes = new Snowflake[100];
 
 
 void setup(){
@@ -17,7 +17,7 @@ void setup(){
   //int randy = int((Math.random() * 700));
   for(int i=0; i<snowflakes.length; i++){
     int randx = int(random(801));
-    int randy = int(random(-1000, -200));
+    int randy = int(random(-3000, -200));
     //random mass?
     //float randm = random(5);
     snowflakes[i] = new Snowflake(1, randx, randy, patterns[int(random(4))]);
@@ -27,9 +27,15 @@ void setup(){
 void draw(){
   background(100);
   for (Snowflake flake : snowflakes){
-    PVector gravity = new PVector(0,0.1*flake.mass);
-    //Apply gravvity
+    PVector gravity = new PVector(0,0.01);
+    //Apply gravity
     flake.applyForce(gravity);
+    /**
+    * Forces (Gravity) with Vectors 
+    * by Daniel Shiffman.  
+    * 
+    * Bodies experience gravity continuously
+    */
     
     //update and display
     flake.update();
@@ -37,7 +43,7 @@ void draw(){
     flake.checkEdges();
   }
   fill(255);
-  text("drag cursor to disturb snowflakes", 10, 30);
+  text("click to disturb snowflakes", width/2-50, 30);
 }
 
 void mousePressed(){
@@ -45,10 +51,3 @@ void mousePressed(){
     
   }
 }
-
-/**
- * Forces (Gravity) with Vectors 
- * by Daniel Shiffman.  
- * 
- * Bodies experience gravity continuously
- */
