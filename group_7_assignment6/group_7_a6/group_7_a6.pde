@@ -17,13 +17,13 @@ void setup(){
   int randx = (int)(Math.random() * 800);
   int randy = (int)(Math.random() * 700);
   for(int i=0; i<50; i++){
-    snowflakes[i] = new Snowflake(1, randx, 0, patterns[int(random(4))]);
+    snowflakes[i] = new Snowflake(1, randx, 0, patterns[int(random())]);
   }
   
 }
 
 void draw(){
-  background(0);
+  background(100);
   for (Snowflake flake : snowflakes){
     PVector gravity = new PVector(0,0.1*flake.mass);
     //Apply gravvity

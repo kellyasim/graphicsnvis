@@ -13,6 +13,7 @@ class Snowflake{
     velocity= new PVector(0,0);
     acceleration = new PVector(0,0);
     snowflake_type = snowflake;
+    snowflake_type.resize(50,50);
   }
   
   //class method to apply forces
