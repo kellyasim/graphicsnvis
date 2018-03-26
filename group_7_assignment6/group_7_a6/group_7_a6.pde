@@ -1,9 +1,10 @@
-//random x values
+//random x values for snowflakes
 //random generation of graphic
-//random - y value
+//random - y value for snowflakes to fall at staggered positions
 
 //bottom of screen recall initial x and y
 
+//initializing all 50 snowflakes, randomly choose one of the 4 patterns
 snowflake [] snowflakes = new snowflake[50];
 
 void setup(){

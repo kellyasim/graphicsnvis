@@ -16,8 +16,7 @@ class Snowflake(){
     snowflaskes[1] = loadShape("hexflake.png");
     snowflaskes[2] = loadShape("simpleflake.png");
     snowflaskes[4] = loadShape("snowflake.png");
-    
-    
+        
   }
   
   Pshape create() {
@@ -26,7 +25,7 @@ class Snowflake(){
   
   //class method to apply forces
   //Newton's 2nd law = F=MA or A=F/M
-  void applyForce(PVector force_{
+  void applyForce(PVector force){
     //divide by mass
     PVector f = PVector.div(force,mass);
     //accumulate force in acceleration
@@ -54,17 +53,5 @@ class Snowflake(){
   //draw snowflake
   void display(){
     shape(snowflake1, );
-} 
-    
-    
-    
-    
-    
-    
-
   }
-
-  
-  
-  
 }
