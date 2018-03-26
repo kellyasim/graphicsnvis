@@ -47,16 +47,16 @@ void draw(){
 }
 
 void mousePressed(){
-  rectMode(CENTER);
-  rect(mouseX,mouseY,100,100);
+  //delete ellipse code before submittion
+  ellipseMode(CENTER);
+  ellipse(mouseX,mouseY,150,150);
+  
   for(Snowflake flake : snowflakes){
+    float distx = flake.position.x + 25 - mouseX;
+    float disty = flake.position.y + 25 - mouseY;
     PVector force = new PVector(50,0);
-    if(flake.position.x < mouseX+100 && 
-       flake.position.x > mouseX-100 && 
-       flake.position.y < mouseY+100 &&
-       flake.position.y > mouseY-100){
+    if(sqrt(sq(distx) + sq(disty)) < 75){
       flake.applyForce(force);
-      println("contact");
     }
   }
 }
