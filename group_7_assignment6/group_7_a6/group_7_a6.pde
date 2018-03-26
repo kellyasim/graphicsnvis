@@ -47,7 +47,16 @@ void draw(){
 }
 
 void mousePressed(){
+  rectMode(CENTER);
+  rect(mouseX,mouseY,100,100);
   for(Snowflake flake : snowflakes){
-    
+    PVector force = new PVector(50,0);
+    if(flake.position.x < mouseX+100 && 
+       flake.position.x > mouseX-100 && 
+       flake.position.y < mouseY+100 &&
+       flake.position.y > mouseY-100){
+      flake.applyForce(force);
+      println("contact");
+    }
   }
 }
