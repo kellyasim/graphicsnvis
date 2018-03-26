@@ -43,6 +43,17 @@ class Snowflake{
     acceleration.mult(0);
   }
   
+  void checkEdges(){
+    if(position.x < -60 || position.x > 860 || position.y > 760){
+      position.x = int(random(801));
+      position.y = int(random(-1500, -200));
+      velocity.x = 0;
+      velocity.y = 0;
+      acceleration.x = 0;
+      acceleration.y = 0;
+    }
+  }
+  
   //draw snowflake
   void display(){
     image(snowflake_type, position.x, position.y);

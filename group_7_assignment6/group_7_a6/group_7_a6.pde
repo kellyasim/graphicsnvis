@@ -11,15 +11,17 @@ Snowflake[] snowflakes = new Snowflake[50];
 void setup(){
   size (800, 700);
   PImage[] patterns = {loadImage("blueflake.png"),
-  loadImage("hexflake.png"),
-  loadImage("simpleflake.png"),
-  loadImage("snowflake.png")};
-  int randx = (int)(Math.random() * 800);
-  int randy = (int)(Math.random() * 700);
-  for(int i=0; i<50; i++){
-    snowflakes[i] = new Snowflake(1, randx, 0, patterns[int(random())]);
-  }
-  
+                       loadImage("hexflake.png"),
+                       loadImage("simpleflake.png"),
+                       loadImage("snowflake.png")};
+  //int randy = int((Math.random() * 700));
+  for(int i=0; i<snowflakes.length; i++){
+    int randx = int(random(801));
+    int randy = int(random(-1000, -200));
+    //random mass?
+    //float randm = random(5);
+    snowflakes[i] = new Snowflake(1, randx, randy, patterns[int(random(4))]);
+  } 
 }
 
 void draw(){
@@ -32,14 +34,16 @@ void draw(){
     //update and display
     flake.update();
     flake.display();
-    //flake.checkEdges();
+    flake.checkEdges();
   }
   fill(255);
   text("drag cursor to disturb snowflakes", 10, 30);
 }
 
 void mousePressed(){
-  ///////////////////////disturb snowflakes
+  for(Snowflake flake : snowflakes){
+    
+  }
 }
 
 /**
