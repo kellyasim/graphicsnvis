@@ -46,17 +46,24 @@ void draw(){
   text("click to disturb snowflakes", width/2-50, 30);
 }
 
+
+
 void mousePressed(){
   //delete ellipse code before submittion
   ellipseMode(CENTER);
   ellipse(mouseX,mouseY,150,150);
   
   for(Snowflake flake : snowflakes){
+    //get distance
     float distx = flake.position.x + 25 - mouseX;
     float disty = flake.position.y + 25 - mouseY;
-    PVector force = new PVector(50,0);
-    if(sqrt(sq(distx) + sq(disty)) < 75){
-      flake.applyForce(force);
+    if(sqrt(sq(distx) + sq(disty)) < 75){   
+      if(distx < 0) {
+        flake.applyForce(new PVector(-50,0));
+      } else {
+        flake.applyForce(new PVector(50,0));
+      }
     }
+    
   }
 }
