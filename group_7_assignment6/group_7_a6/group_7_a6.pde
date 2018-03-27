@@ -53,15 +53,28 @@ void mousePressed(){
   ellipseMode(CENTER);
   ellipse(mouseX,mouseY,150,150);
   
+  //change r to change area affected by the disturbance 
+  int r = 75;
+  //change mag to change the magnitude of the disturbance
+  int mag = 2;
+  
   for(Snowflake flake : snowflakes){
     //get distance
     float distx = flake.position.x + 25 - mouseX;
     float disty = flake.position.y + 25 - mouseY;
-    if(sqrt(sq(distx) + sq(disty)) < 75){   
+
+    if(sqrt(sq(distx) + sq(disty)) < r){   
       if(distx < 0) {
-        flake.applyForce(new PVector(-50,0));
-      } else {
-        flake.applyForce(new PVector(50,0));
+        flake.applyForce(new PVector(-mag,0));
+      } 
+      else {
+        flake.applyForce(new PVector(mag,0));
+      }
+      if(disty > 0){
+        flake.applyForce(new PVector(0,mag));
+      }
+      else{
+        flake.applyForce(new PVector(0,-mag));
       }
     }
     
