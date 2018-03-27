@@ -1,8 +1,8 @@
 Assignment6- Particles
 
-Since the assignment calls for more complex shapes, we chose to create a 2D scene with various snowflake graphics. The intended simulation would have roughly 50 vector snowflake graphics falling from the "sky". The forces we decided upon were gravity and impulse from falling snowflakes and the disturbance of snowflakes of dragging a mouse across the screen, respectively. The simulation would need to load small vector snowflakes with a random x value at the top of the screen with random -y values for visual appeal. 
+Since the assignment calls for more complex shapes, we chose to create a 2D scene with various snowflake graphics. The intended simulation would have roughly 50 vector snowflake graphics falling from the "sky". The forces we decided upon were gravity and impulse from falling snowflakes and the disturbance of snowflakes of clicking on the screen, respectively. The simulation would need to load small vector snowflakes with a random x value at the top of the screen with random -y values for visual appeal. 
 
-##The snowflakes would have a mass and fall with the force of gravity. 
+The snowflakes would have a mass and fall with the force of gravity. 
 
 The interactivity we chose to implement would add an additional force (impulse force) caused in part by the click of the mouse. As the cursor is clicked, the snowflakes would theoretically take up the acceleration of the cursor and fly off the screen. After the snowflakes disappear off the sides or bottom of the screen, a new random x value and y value would be generated provide a continuous loop.
 
