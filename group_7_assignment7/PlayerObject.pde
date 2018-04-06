@@ -4,10 +4,16 @@ class PlayerObject extends EntityObject{
   }
 
   void control(char input){
-    if(input == 'w' || input == 'W'){ position.y -= 5; }
-    if(input == 'a' || input == 'A'){ position.x -= 5; }
-    if(input == 's' || input == 'S'){ position.y += 5; }
-    if(input == 'd' || input == 'D'){ position.x += 5; }
+    if(check_collision()){
+      if(input == 'w' || input == 'W'){ position.y -= 5; }
+      if(input == 'a' || input == 'A'){ position.x -= 5; }
+      if(input == 's' || input == 'S'){ position.y += 5; }
+      if(input == 'd' || input == 'D'){ position.x += 5; }
+    }
+  }
+  
+  void display(){
+    ellipse(position.x, position.y, 50,50);
   }
 
 }

@@ -8,11 +8,27 @@ class EntityObject{
     position = new PVector(xpos,ypos);
   }
   
-  void display(){
-    ellipse(position.x, position.y, 50,50);
-  }
+
   
-  void check_collision(){
+  Boolean check_collision(){
+    //check collision with border
+    if(position.x-25<0){
+      position.x = 25;
+      return false;
+    }
+    if(position.x+25>1000){
+      position.x = 975;
+      return false;
+    }
+    if(position.y-25<0){
+      position.y = 25;
+      return false;
+    }
+    if(position.y+25>800){
+      position.y = 775;
+      return false;
+    }
     
+    return true;
   }
 }

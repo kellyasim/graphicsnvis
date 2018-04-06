@@ -3,7 +3,7 @@ MapElement map;
 void setup(){
   size(1000,1000);
   player = new PlayerObject(100,500,500);
-  map = new MapElement();
+  map = new MapElement(player);
 }
 
 void draw(){
