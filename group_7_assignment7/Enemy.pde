@@ -2,20 +2,32 @@ class Enemy extends EntityObject{
   int radius;
   int turn = 0;
   int direction = int(random(4));
-  int speed = 3;
+  int damage = 20;
   Enemy(int health, int r, int xpos, int ypos){
     super(health, xpos, ypos);
     radius = r;
+    speed = 3;
+    lives = 1;
   }
   
   void display(){
-    //radius debugging
-    ellipseMode(CENTER);
-    ellipse(position.x, position.y, radius, radius);
-    
-    //graphical representation of monster
-    rectMode(CENTER);
-    rect(position.x, position.y, 50,50);
+    if(alive){
+      //radius debugging
+      ellipseMode(CENTER);
+      ellipse(position.x, position.y, radius, radius);
+      
+      //graphical representation of monster
+      rectMode(CENTER);
+      rect(position.x, position.y, 50,50);
+    }
+    else{
+      position.x = -100;
+      position.y = -100;
+    }
+  }
+  
+  int return_damage(){
+    return damage;
   }
   
   void animate(PVector pp){ //pp stands for "player position"
@@ -25,7 +37,7 @@ class Enemy extends EntityObject{
     //idle movement
     if(check_collision()){
       if(turn == 15){
-        turn = -30;
+        turn = -50;
         direction = int(random(4));
       }
       //Enemy just stands around for a couple of frames
