@@ -15,7 +15,9 @@ class MapElement{
     
       for (int i = 0; i < imgCt; i ++){
         String file = "turtle_0"+ nf(i,1)+ ".png";
-        turtle[i] = loadImage(file);
+        PImage newImage = loadImage(file);
+        newImage.resize(70,70);
+        turtle[i] = newImage;
       }
     player = p;
     player_pos = player.return_position();
@@ -29,7 +31,7 @@ class MapElement{
     rect(50,50, 50, 300);
     
     //move enemies in the map
-    enemy1.animate(player_pos);
+    enemy1.animate(player_pos, turtle);
     
     //check if any enemies touched the player
     if( check_player_enemy_collision(enemy1.return_position()) ){

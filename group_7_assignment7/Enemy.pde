@@ -3,6 +3,7 @@ class Enemy extends EntityObject{
   int turn = 0;
   int direction = int(random(4));
   int damage = 20;
+  PImage frame;
   Enemy(int health, int r, int xpos, int ypos){
     super(health, xpos, ypos);
     radius = r;
@@ -10,17 +11,17 @@ class Enemy extends EntityObject{
     lives = 1;
   }
   
-  void display(float x, float y){
+  void display(PImage frame){
     if(alive){
       //radius debugging
       ellipseMode(CENTER);
       ellipse(position.x, position.y, radius, radius);
       
       //graphical representation of monster
-      frame = (frame + 1) % imgCt;
-      image(turtle[frame], x, y);
-      //rectMode(CENTER);
-      //rect(position.x, position.y, 50,50);
+      rectMode(CENTER);
+      rect(position.x, position.y, 50,50);
+      image(frame, position.x-35, position.y-35);
+
     }
     else{
       position.x = -100;
@@ -32,9 +33,10 @@ class Enemy extends EntityObject{
     return damage;
   }
   
-  void animate(PVector pp){ //pp stands for "player position"
+  void animate(PVector pp, PImage [] turtle){ //pp stands for "player position"
     float distx = pp.x - position.x;
     float disty = pp.y - position.y;
+    frame = turtle[frameCount % 6];
     
     //idle movement
     if(check_collision()){
@@ -45,23 +47,24 @@ class Enemy extends EntityObject{
       //Enemy just stands around for a couple of frames
       if(turn < 0){
         turn++;
-        display();
+        frame = turtle[0];
+        display(frame);
         return;
       }
       switch(direction){      
-        case 0:
-          position.y -= speed; 
+        case 0: //north
+          position.y -= speed;          
           turn++;
           break;
-        case 1:
+        case 1: //east
           position.x -= speed;
           turn++;
           break;
-        case 2:
+        case 2: //south
           position.y += speed;
           turn++;
           break;
-        case 3:
+        case 3: //west
           position.x += speed;
           turn++;
           break;
@@ -87,6 +90,6 @@ class Enemy extends EntityObject{
     }
     
     //display updated position
-    display();
+    display(frame);
   }
 }
