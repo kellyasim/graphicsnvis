@@ -1,5 +1,6 @@
-wasd to move
+Press the "play" button to start the game. 
 
-j to attack
-
-p to pause
+Use: 
+'wasd' to move
+'j' to attack
+'p' for tutorial/move keys and to pause/unpause the game

@@ -1,0 +1,31 @@
+PROJECT DESCRIPTION 
+
+We have decide to do a Dungeon / RPG style game. The goal of the game is to defeat the monsters and retrieve a key 
+
+from somewhere on the map in order to unlock the door and proceed to next stage. 
+
+GAMEPLAY: 
+Rules:
+1) Touch Enemy it takes away life
+2) you can attack the opponent
+3) you can only move with in the confines of the map
+
+
+Interactions:
+1) 'w' to move up 
+2) 'a' to move left 
+3) 'd' to move right
+4) 's' to move down
+5) 'j' to attack
+6) 'p' to pause
+
+GUI Visual:
+'p' for tutorial in top left corner
+player health bar and lives
+number of enemies left 
+
+Win:
+To win you need to kill all opponents.
+
+Lose:
+you run out of hp and lives.
