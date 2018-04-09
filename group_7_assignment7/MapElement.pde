@@ -3,9 +3,20 @@ class MapElement{
   Enemy enemy1;
   PVector player_pos;
   PVector atk_dir;
+  PImage [] turtle;
+  int imgCt;
+  int frame;
+  
   
   MapElement(PlayerObject p){
+    imgCt = 6;
+    turtle = new PImage[imgCt];
     enemy1 = new Enemy(50,300,700,200);
+    
+      for (int i = 0; i < imgCt; i ++){
+        String file = "turtle_0"+ nf(i,1)+ ".png";
+        turtle[i] = loadImage(file);
+      }
     player = p;
     player_pos = player.return_position();
   }

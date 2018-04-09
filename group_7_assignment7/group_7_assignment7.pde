@@ -21,8 +21,12 @@ void draw(){
 void keyPressed(){
   if(key == 'p'){
     fill(0, 102, 153);
+    textSize(48);
+    text("PAUSE", 100,450);
     textSize(32);
-    text("PAUSE", 450,400);
+    text("Use 'WASD' to move", 100, 500);
+    text("Press 'J' to attack", 100, 550);
+    text("Press 'P' to unpause", 100, 600);
     pause = !pause;
     fill(255);
   }

@@ -10,15 +10,17 @@ class Enemy extends EntityObject{
     lives = 1;
   }
   
-  void display(){
+  void display(float x, float y){
     if(alive){
       //radius debugging
       ellipseMode(CENTER);
       ellipse(position.x, position.y, radius, radius);
       
       //graphical representation of monster
-      rectMode(CENTER);
-      rect(position.x, position.y, 50,50);
+      frame = (frame + 1) % imgCt;
+      image(turtle[frame], x, y);
+      //rectMode(CENTER);
+      //rect(position.x, position.y, 50,50);
     }
     else{
       position.x = -100;
