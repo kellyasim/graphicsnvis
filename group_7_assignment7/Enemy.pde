@@ -12,6 +12,9 @@ class Enemy extends EntityObject{
   }
   
   void display(PImage frame){
+   
+    frameRate(12);
+
     if(alive){
       //radius debugging
       ellipseMode(CENTER);
@@ -41,7 +44,7 @@ class Enemy extends EntityObject{
     //idle movement
     if(check_collision()){
       if(turn == 15){
-        turn = -50;
+        turn = -20;
         direction = int(random(4));
       }
       //Enemy just stands around for a couple of frames

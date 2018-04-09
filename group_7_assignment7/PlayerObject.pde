@@ -27,7 +27,9 @@ class PlayerObject extends EntityObject{
   
   void display(){
     if(alive){
+      fill(#DF52FF);
       ellipse(position.x, position.y, 50,50);
+      fill(255);
     }
     else{
       fill(255,0,0);

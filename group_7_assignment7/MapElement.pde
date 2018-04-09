@@ -3,6 +3,7 @@ class MapElement{
   Enemy enemy1;
   PVector player_pos;
   PVector atk_dir;
+  //PImage [] turtleup; PImage []turtledown; PImage [] turtleleft; PImage [] turtleright;
   PImage [] turtle;
   int imgCt;
   int frame;
@@ -10,7 +11,7 @@ class MapElement{
   
   MapElement(PlayerObject p){
     imgCt = 6;
-    turtle = new PImage[imgCt];
+    turtle = new PImage[imgCt]; ///////////////////////////////
     enemy1 = new Enemy(50,300,700,200);
     
       for (int i = 0; i < imgCt; i ++){
