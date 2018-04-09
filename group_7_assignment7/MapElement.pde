@@ -42,15 +42,18 @@ class MapElement{
   
   void attacked(){
     atk_dir = player.attack();
-    if( check_player_enemy_collision(enemy1.return_position()) ){
+    if( check_atk_enemy(enemy1.return_position()) ){
       enemy1.damage(25);
       enemy1.recoil(player_pos, 15);
     };
   }
   
   boolean check_atk_enemy(PVector pos){
+    println(atk_dir.x, " ", atk_dir.y);
+    println(pos.x + 25, pos.x-25, pos.y+25, pos.y-25);
+    println("*********end attack*********");
     return atk_dir.x < pos.x + 25 && 
-           atk_dir.x > pos.x - 25&& 
+           atk_dir.x > pos.x - 25 && 
            atk_dir.y < pos.y + 25 && 
            atk_dir.y > pos.y - 25;
   }
