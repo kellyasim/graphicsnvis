@@ -12,7 +12,6 @@ class EntityObject{
   }
   
   void recoil(PVector enemy_position, int magnitude){
-    fill(255,0,0);
     float distx = position.x - enemy_position.x;
     float disty = position.y - enemy_position.y;
     
@@ -28,8 +27,6 @@ class EntityObject{
     else{
       position.y += magnitude*speed;
     }
-    ellipse(position.x, position.y, 50,50);
-    fill(255);
   }
   
   Boolean check_collision(){
@@ -76,5 +73,9 @@ class EntityObject{
   
   PVector return_position(){
     return position;
+  }
+  
+  boolean is_alive(){
+    return alive;
   }
 }

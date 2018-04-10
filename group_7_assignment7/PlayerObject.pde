@@ -2,12 +2,14 @@ class PlayerObject extends EntityObject{
   //0 = north, 1 = east, 2 = south, 3 = west
   int direction;
   PVector swing_direction;
+  PImage weapon;
   
   PlayerObject(int health, int xpos, int ypos){
     super(health, xpos, ypos);
     speed = 5;
     lives = 3;
     swing_direction = new PVector(0, 0);
+    weapon = loadImage("bolt.png");
   }
 
   void control(char input){
@@ -22,9 +24,7 @@ class PlayerObject extends EntityObject{
   int return_lives(){
     return lives;
   }
-  
 
-  
   void display(){
     if(alive){
       fill(#DF52FF);
@@ -35,7 +35,6 @@ class PlayerObject extends EntityObject{
       fill(255,0,0);
       textSize(100);
       text("Game Over", 200,400);
-      
       fill(255);
     }
   }
@@ -61,7 +60,7 @@ class PlayerObject extends EntityObject{
       default:
         break;
     }
-    line(position.x, position.y, swing_direction.x, swing_direction.y);
+    image(weapon, position.x, position.y);
     return(swing_direction);
   }
 }

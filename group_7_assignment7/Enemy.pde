@@ -4,6 +4,7 @@ class Enemy extends EntityObject{
   int direction = int(random(4));
   int damage = 20;
   PImage frame;
+  
   Enemy(int health, int r, int xpos, int ypos){
     super(health, xpos, ypos);
     radius = r;
@@ -12,19 +13,18 @@ class Enemy extends EntityObject{
   }
   
   void display(PImage frame){
-   
-    frameRate(12);
 
     if(alive){
       //radius debugging
-      ellipseMode(CENTER);
-      ellipse(position.x, position.y, radius, radius);
+      //ellipseMode(CENTER);
+      //ellipse(position.x, position.y, radius, radius);
       
       //graphical representation of monster
-      rectMode(CENTER);
-      rect(position.x, position.y, 50,50);
       image(frame, position.x-35, position.y-35);
-
+      
+      //hitbox
+      //rectMode(CENTER);
+      //rect(position.x, position.y, 50,50);
     }
     else{
       position.x = -100;
@@ -34,6 +34,10 @@ class Enemy extends EntityObject{
   
   int return_damage(){
     return damage;
+  }
+  
+  int return_direction(){
+    return direction;
   }
   
   void animate(PVector pp, PImage [] turtle){ //pp stands for "player position"
@@ -47,7 +51,8 @@ class Enemy extends EntityObject{
         turn = -20;
         direction = int(random(4));
       }
-      //Enemy just stands around for a couple of frames
+      
+     //Enemy just stands around for a couple of frames
       if(turn < 0){
         turn++;
         frame = turtle[0];
@@ -80,15 +85,19 @@ class Enemy extends EntityObject{
     if(sqrt(sq(distx) + sq(disty)) < radius/2){
       if(distx < 0){
         position.x -= speed;
+        direction = 1;
       }
       else{
         position.x += speed;
+        direction = 3;
       }
       if(disty < 0){
         position.y -= speed;
+        direction = 0;
       }
       else{
         position.y += speed;
+        direction = 2;
       }
     }
     
