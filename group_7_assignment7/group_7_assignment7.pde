@@ -1,5 +1,4 @@
 PlayerObject player;
-MapElement map;
 HUD hud;
 boolean pause = false;
 int num_enemies, level;
@@ -9,7 +8,11 @@ void setup(){
   size(1000,1000);
   frameRate(20);
   player = new PlayerObject(100,500,500);
-  map = new MapElement(player,10);
+  level = 0;
+  levels = new MapElement[3];
+  for(int i=0;i<3;i++){
+    levels[i] = new MapElement(player,(1+i)*3);
+  }
   hud = new HUD(player, 10);
   new_frame();
   pause();
@@ -22,9 +25,17 @@ void draw(){
 }
 
 void new_frame(){
-  map.display();
-  num_enemies = map.return_num_enemies();
-  hud.display(num_enemies);
+  levels[level].display();
+  num_enemies = levels[level].return_num_enemies();
+  hud.display(num_enemies, level);
+  if(num_enemies == 0){
+    if(level == 2){
+      text("YOU WIN", 100,100);
+      noLoop();
+    }
+    level++;
+  }
+  
   player.display();
 }
 
@@ -45,7 +56,7 @@ void keyPressed(){
     pause();
   }
   if(key == 'j' || key == 'J'){
-    map.attacked();
+    levels[level].attacked();
   }
   player.control(key);
 }

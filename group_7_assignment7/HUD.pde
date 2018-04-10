@@ -7,7 +7,7 @@ class HUD{
     num_enemies = n;
   }
   
-  void display(int num_enemies){
+  void display(int num_enemies, int level){
     hp = player.return_hp();
     fill(150);
     rectMode(CORNER);
@@ -19,7 +19,8 @@ class HUD{
     textSize (30);
     
     textSize(50);
-    text("hp : "+ hp,25,850);
+    text("hp: "+ hp,25,850);
+    text("level: "+(level+1), 500, 850); 
     text("lives: ",25, 900);
     text("enemies: ", 25, 960);
     fill(255, 0, 0);
