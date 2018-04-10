@@ -4,6 +4,9 @@ boolean pause = false;
 int num_enemies, level;
 MapElement [] levels;
 
+// CODE TO RECORD
+//boolean isRecording = false;
+
 void setup(){
   size(1000,1000);
   frameRate(20);
@@ -22,6 +25,10 @@ void draw(){
   if(!pause && player.return_lives() > 0){
     new_frame();
   }
+  // CODE TO RECORD
+  //if(isRecording) {
+  //  saveFrame();
+  //}
 }
 
 void new_frame(){
@@ -50,6 +57,8 @@ void pause(){
   text("Use 'WASD' to move", 100, 500);
   text("'J' to attack", 100, 550);
   text("'P' to pause/unpause", 100, 600);
+  // CODE TO RECORDS
+  //text("'R' to start/stop recording", 100, 650);
   pause = !pause;
   fill(255);
 }
@@ -61,5 +70,10 @@ void keyPressed(){
   if(key == 'j' || key == 'J'){
     levels[level].attacked();
   }
+  
+  // CODE TO RECORD
+  //if(key == 'r' || key == 'R'){
+  //  isRecording = !isRecording;
+  //}
   player.control(key);
 }
