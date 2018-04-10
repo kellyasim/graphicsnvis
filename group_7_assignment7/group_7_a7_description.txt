@@ -4,9 +4,9 @@ We have decide to do a Dungeon / RPG style game. The goal of the game is to defe
 
 GAMEPLAY: 
 Rules:
-1) Touch Enemy it takes away life.
-2) you can attack the opponent.
-3) you can only move with in the confines of the map
+1) Touching the Enemy takes away health.
+2) you can attack the Enemy.
+3) you can only move with in the confines of the map.
 
 
 Interactions:
