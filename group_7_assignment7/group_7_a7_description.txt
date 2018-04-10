@@ -51,4 +51,4 @@ Abel did quite literally all of the coding and setting up all the classes with s
 
 Kelly worked on finding graphics (background), animation of the turtle and attack move and the tutorial screen.
 
-Bongani worked on writing up the progress report and softcoding the structure of classes.
+Bongani worked on writing up the progress report and softcoding the structure of classes and animation artifcate.
