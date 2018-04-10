@@ -1,12 +1,14 @@
 PROJECT DESCRIPTION 
 
-We have decide to do a Dungeon / RPG style game. The goal of the game is to defeat the turtles. 
+We have decide to do a "hoard mode" style game. The goal of the game is to defeat the turtles. 
 
 GAMEPLAY: 
 Rules:
-1) Touching the Enemy takes away health.
+1) Touching an Enemy takes away health.
 2) you can attack the Enemy.
-3) you can only move with in the confines of the map.
+3) you can only move within the confines of the map.
+4) being within a certain distance from an enemy will draw the enemy's attention
+5) when an entity is hit they experience recoil, a sudden movement away from the source of the damage.
 
 
 Interactions:
@@ -17,13 +19,19 @@ Interactions:
 5) 'j' to attack
 6) 'p' to pause
 
-GUI Visual:
-> 'p' for tutorial in top left corner (explains game state)
+Visual display:
+> the purple circle represents the player (a seajelly)
+> the enemies are sea turtles
+> the player's attack is a bolt of electricity
+
+GUI Interface (HUD):
 > player health points and lives
 > number of enemies left 
+> what level the player is on
 
 Win:
-Player needs to defeat all opponents on the screen.
+Player needs to defeat all opponents on the screen to move on to the next level.
+The player wins after defeating all the enemies on level 3.
 
 Lose:
 Player runs out of hp and lives.
@@ -44,7 +52,7 @@ In the Enemy class stores the health, size and speed of each turtle and in the P
 The main class calls the HUD and MapElement classes directly. The HUD class calls directly on the PlayerObject class to load in player health information while the MapElement class loads from each of the other classes to create the overall GUI.
 
 Struggles:
-Had issues with the smoothness of the game and only being able to turn at right angles this causes some issues with the attack move being slightly off centered and the general mechanics of the game. Additionally there is still a bug that exists where the turtles can push the player off the screen and the player is unable to recover from this, thus terminating the game.
+Had issues with the smoothness of the game and only being able to turn at right angles this causes some issues with the attack move being slightly off centered and the general mechanics of the game. Additionally there is still a bug that exists where the turtles can push the player off the screen. The player can recover from this if they move toward the screen, but it might be easier to reset the game.
 
 Overview:
 Abel did quite literally all of the coding and setting up all the classes with some (barely) input from Kelly. 

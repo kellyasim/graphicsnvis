@@ -20,6 +20,7 @@ class HUD{
     
     textSize(50);
     text("hp: "+ hp,25,850);
+    fill(0,0,255);
     text("level: "+(level+1), 500, 850); 
     text("lives: ",25, 900);
     text("enemies: ", 25, 960);
