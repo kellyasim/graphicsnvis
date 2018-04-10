@@ -23,7 +23,32 @@ GUI Visual:
 > number of enemies left 
 
 Win:
-To win you need to defeat all opponents on the screen.
+Player needs to defeat all opponents on the screen.
 
 Lose:
-you run out of hp and lives.
+Player runs out of hp and lives.
+
+
+Classes:
+> MapElement class loads in each new level- expandable for future uses and controls the directional turtle.pngs, number of enemies and their movements
+
+> EntityObject class loads in sprite objects (both enemies and the player self) into the map. It loads in the position of all sprite objects to account for collisions as well as the health/lives of each sprite.
+
+Extended from this class are:
+* Enemy (turtles)
+* PlayerObject (jellyfish)
+In the Enemy class stores the health, size and speed of each turtle and in the PlayerObject class, are the player controls (WASD), player lives and the attack move and animations and the 'Game Over' state.
+
+> HUD class (Heads up display) stores all the information for health, lives and number of turtles left to defeat.
+
+The main class calls the HUD and MapElement classes directly. The HUD class calls directly on the PlayerObject class to load in player health information while the MapElement class loads from each of the other classes to create the overall GUI.
+
+Struggles:
+Had issues with the smoothness of the game and only being able to turn at right angles this causes some issues with the attack move being slightly off centered and the general mechanics of the game. Additionally there is still a bug that exists where the turtles can push the player off the screen and the player is unable to recover from this, thus terminating the game.
+
+Overview:
+Abel did quite literally all of the coding and setting up all the classes with some (barely) input from Kelly. 
+
+Kelly worked on finding graphics (background), animation of the turtle and attack move and the tutorial screen.
+
+Bongani worked on writing up the progress report and softcoding the structure of classes.
