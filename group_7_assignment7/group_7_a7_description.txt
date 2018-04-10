@@ -1,13 +1,11 @@
 PROJECT DESCRIPTION 
 
-We have decide to do a Dungeon / RPG style game. The goal of the game is to defeat the monsters and retrieve a key 
-
-from somewhere on the map in order to unlock the door and proceed to next stage. 
+We have decide to do a Dungeon / RPG style game. The goal of the game is to defeat the turtles. 
 
 GAMEPLAY: 
 Rules:
-1) Touch Enemy it takes away life
-2) you can attack the opponent
+1) Touch Enemy it takes away life.
+2) you can attack the opponent.
 3) you can only move with in the confines of the map
 
 
@@ -20,12 +18,12 @@ Interactions:
 6) 'p' to pause
 
 GUI Visual:
-'p' for tutorial in top left corner
-player health bar and lives
-number of enemies left 
+> 'p' for tutorial in top left corner
+> player health points and lives
+> number of enemies left 
 
 Win:
-To win you need to kill all opponents.
+To win you need to defeat all opponents on the screen.
 
 Lose:
 you run out of hp and lives.
