@@ -1,0 +1,11 @@
+Group7- a8 description
+
+>>Summarizes the visualization functionalities and implementations, what the included classes do, and any unexpected challenges. Also document which group member worked on which part of the assignment.
+
+PART I- 
+
+
+PART II- 
+
+
+PART III- 
