@@ -18,7 +18,7 @@ Interactions:
 6) 'p' to pause
 
 GUI Visual:
-> 'p' for tutorial in top left corner
+> 'p' for tutorial in top left corner (explains game state)
 > player health points and lives
 > number of enemies left 
 

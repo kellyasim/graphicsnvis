@@ -41,12 +41,15 @@ void new_frame(){
 
 void pause(){
   fill(0, 102, 153);
-  textSize(48);
-  text("PAUSE", 100,450);
+  //textSize(48);
+  //text("-PAUSE-", 100,430);
+  textSize(20);
+  text ("As a lone jellyfish, ", 100, 430); 
+  text ("defeat as many turtles to gain your freedom", 100, 460);
   textSize(32);
   text("Use 'WASD' to move", 100, 500);
-  text("Press 'J' to attack", 100, 550);
-  text("Press 'P' to pause/unpause", 100, 600);
+  text("'J' to attack", 100, 550);
+  text("'P' to pause/unpause", 100, 600);
   pause = !pause;
   fill(255);
 }
