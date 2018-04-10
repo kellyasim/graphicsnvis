@@ -57,6 +57,7 @@ class PlayerObject extends EntityObject{
       fill(255,0,0);
       textSize(100);
       text("Game Over", 200,400);
+      text("'R' to restart", 200, 500);
       fill(255);
     }
   }

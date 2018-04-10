@@ -122,9 +122,6 @@ class MapElement{
   }
   
   boolean check_atk_enemy(PVector pos){
-    println(atk_dir.x, " ", atk_dir.y);
-    println(pos.x + 25, pos.x-25, pos.y+25, pos.y-25);
-    println("*********end attack*********");
     return atk_dir.x < pos.x + 25 && 
            atk_dir.x > pos.x - 25 && 
            atk_dir.y < pos.y + 25 && 

@@ -18,6 +18,7 @@ Interactions:
 4) 's' to move down
 5) 'j' to attack
 6) 'p' to pause
+7) 'r' to restart the game
 
 Visual display:
 > the purple circle represents the player (a seajelly)

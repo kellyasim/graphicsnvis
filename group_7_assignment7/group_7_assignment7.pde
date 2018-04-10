@@ -1,6 +1,6 @@
 PlayerObject player;
 HUD hud;
-boolean pause = false;
+boolean pause;
 int num_enemies, level;
 MapElement [] levels;
 
@@ -18,6 +18,7 @@ void setup(){
   }
   hud = new HUD(player, 10);
   new_frame();
+  pause = false;
   pause();
 }
 
@@ -38,7 +39,8 @@ void new_frame(){
   if(num_enemies == 0){
     if(level == 2){
       text("YOU WIN", 100,100);
-      noLoop();
+      text("'R' to restart", 100, 150);
+      pause = true;
     }
     level++;
   }
@@ -57,6 +59,7 @@ void pause(){
   text("Use 'WASD' to move", 100, 500);
   text("'J' to attack", 100, 550);
   text("'P' to pause/unpause", 100, 600);
+  text("'R' to restart", 100, 650);
   // CODE TO RECORDS
   //text("'R' to start/stop recording", 100, 650);
   pause = !pause;
@@ -67,8 +70,12 @@ void keyPressed(){
   if(key == 'p' || key == 'P'){
     pause();
   }
-  if(key == 'j' || key == 'J'){
+  if( (key == 'j' || key == 'J') && !pause ){
     levels[level].attacked();
+  }
+  
+  if(key == 'r' || key =='R'){
+    setup();
   }
   
   // CODE TO RECORD
