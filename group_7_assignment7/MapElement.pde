@@ -3,6 +3,7 @@ class MapElement{
   Enemy enemy1;
   PVector player_pos;
   PVector atk_dir;
+
   PImage bkgd;
   PImage [] turtleup; 
   PImage [] turtledown; 
