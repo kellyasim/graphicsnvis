@@ -1,19 +1,21 @@
 Table table;
 pillars[] trees;
+int treeHeight, volume, girth, id;
 
 void setup() {
   size (500,500,P3D);
-  
   table = loadTable("trees.csv", "header");
+  
   int rownumber = table.getRowCount();
+  trees = new pillars[rownumber];
   for (TableRow row : table.rows()) {
-    int id = row.getInt("id");
-    int girth = row.getInt("Girth");
-    int treeHeight = row.getInt("Height");
-    int volume = row.getInt("Volume");
-  }
-  for (int i = 0; i < rownumber; i++){ //////////////////how to call data in the table
-    trees[i] = new pillars(treeHeight, volume, girth);
+    id = row.getInt("id");
+    girth = row.getInt("Girth");
+    treeHeight = row.getInt("Height");
+    volume = row.getInt("Volume");
+  //}
+  //for (int i = 0; i < rownumber; i++){ //////////////////how to call data in the table
+    trees[id-1] = new pillars(treeHeight, volume, girth);
     println("#" + id + " (" + girth, treeHeight, volume + ")");
   }
   
