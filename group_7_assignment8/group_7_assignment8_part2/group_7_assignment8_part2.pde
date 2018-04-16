@@ -3,7 +3,8 @@ pillars[] trees;
 int treeHeight, volume, girth, id;
 
 void setup() {
-  size (500,500,P3D);
+  size(1500,800,P3D);
+  
   table = loadTable("trees.csv", "header");
   
   int rownumber = table.getRowCount();
@@ -13,21 +14,25 @@ void setup() {
     girth = row.getInt("Girth");
     treeHeight = row.getInt("Height");
     volume = row.getInt("Volume");
-    trees[id-1] = new pillars(treeHeight, girth, volume);
+    trees[id-1] = new pillars(volume, girth, treeHeight);
     println("#" + id + " (" + girth, treeHeight, volume + ")");
   }
   
-  line( 0, 0, 0, 0, 1000, 0); //y axis
-  line( 0, 0, 0, 1000, 0, 0); //x axis
-  line( 0, 0, 0, 0, 0, 1000); //z axis
+
 }
 
 void draw(){
-  camera(-100, 100, -100, //camera position
-         mouseX, mouseY, 10, //focus point
+  background (110);
+  int focusx = mouseX - 100;
+  int focusy = -(mouseY) +100;
+  camera(10, 100, -150, //camera position
+         focusx, focusy, 10, //focus point
          0, -1, 0); //up
-  fill(110);
-
+         
+  line( 0, 0, 0, 0, 1000, 0); //y axis
+  line( 0, 0, 0, 1000, 0, 0); //x axis
+  line( 0, 0, 0, 0, 0, 1000); //z axis
+  
   for (pillars tree: trees){
    tree.display(); 
   }
