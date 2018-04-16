@@ -5,16 +5,15 @@ class pillars{
   pillars(){  }
   
   pillars(float x, float y, float z){
-    xpos = x;
-    pill_height = y;
-    zpos = z;
-
+    xpos = x*10;
+    pill_height = y*10;
+    zpos = z*10;
   }
   
   void display (){
     pushMatrix();
     translate(xpos,0, zpos);
-    box(10,pill_height,10);
+    box(20,pill_height,20);
     popMatrix();
   }
   
