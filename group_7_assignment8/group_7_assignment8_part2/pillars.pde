@@ -8,7 +8,6 @@ class pillars{
     xpos = x;
     pill_height = y;
     zpos = z;
-
   }
   
   void display (){

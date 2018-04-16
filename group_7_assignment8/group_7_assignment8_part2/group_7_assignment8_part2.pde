@@ -1,5 +1,20 @@
+Table table;
+pillars[] trees;
+
 void setup() {
   size (500,500,P3D);
+  
+  table = loadTable("trees.csv", "header");
+  int rownumber = table.getRowCount();
+  for (TableRow row : table.rows()) {
+    int id = row.getInt("id");
+    int girth = row.getInt("Girth");
+    int treeHeight = row.getInt("Height");
+    int volume = row.getInt("Volume");
+    trees[id] = new pillars(treeHeight, volume, girth);
+    println("#" + id + " (" + girth, treeHeight, volume + ")");
+  }
+  
   camera(-100, 100, -100, //camera position
           50, 50, 10, //focus point
           0, -1, 0); //up
@@ -10,7 +25,9 @@ void setup() {
 
 void draw(){
   fill(110);
-  Data
+  for (pillars tree: trees){
+   tree.display(); 
+  }
 
 }
 //void draw_background(){
