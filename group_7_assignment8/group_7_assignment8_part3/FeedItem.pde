@@ -1,4 +1,4 @@
-public class FeedItem {
+class FeedItem {
 
   private String title;
   private String description;
