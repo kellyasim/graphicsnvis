@@ -18,9 +18,10 @@ Feed getFeed(String url) {
 
   XML channel = rss.getChildren("channel")[0];
   String feedTitle = channel.getChildren("title")[0].getContent(); 
+  String feedDate = channel.getChildren("lastBuildDate")[0].getContent(); 
   XML[] items = channel.getChildren("item");
   
-  Feed feed = new Feed(feedTitle);
+  Feed feed = new Feed(feedTitle, feedDate);
   for (int i = 0; i < 1; i++) {   
       String title = items[i].getChildren("title")[0].getContent();
       String description = items[i].getChildren("description")[0].getContent();
