@@ -9,11 +9,11 @@ class Feed {
     this.items = new ArrayList<FeedItem>();
   }
   
-  void setDate(String date) {
+  public void setDate(String date) {
     this.date = date;
   }
   
-  get String getDate(){
+  public String getDate(){
     return this.date;
   }
   
