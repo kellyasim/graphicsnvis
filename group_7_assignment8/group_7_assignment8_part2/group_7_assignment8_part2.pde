@@ -11,7 +11,9 @@ void setup() {
     int girth = row.getInt("Girth");
     int treeHeight = row.getInt("Height");
     int volume = row.getInt("Volume");
-    trees[id] = new pillars(treeHeight, volume, girth);
+  }
+  for (int i = 0; i < rownumber; i++){ //////////////////how to call data in the table
+    trees[i] = new pillars(treeHeight, volume, girth);
     println("#" + id + " (" + girth, treeHeight, volume + ")");
   }
   
