@@ -27,9 +27,28 @@ void draw(){
          focusx, focusy, 150, //focus point
          0, -1, 0); //up
          
-  line( 0, 0, 0, 0, 1000, 0); //y axis
-  line( 0, 0, 0, 1000, 0, 0); //x axis
+  line( 0, 0, 0, 0, 1000, 0); //x axis
+  pushMatrix();
+  rotateX(3*PI/2);
+  text("Volume of timber in cubic feet", 10,0,-20);
+  rotateX(-3*PI/2);
+  popMatrix();
+  
+  line( 0, 0, 0, 1000, 0, 0); //y axis
+  pushMatrix();
+  rotateX(PI);
+  text("Tree Diameter in inches", 5,-10,0);
+  rotateX(-PI);
+  popMatrix();
+  
   line( 0, 0, 0, 0, 0, 1000); //z axis
+  pushMatrix();
+  rotateX(3*PI/2);
+  rotateZ(PI/2);
+  text("Tree Height in feet", -175,0,-50);
+  rotateX(-3*PI/2);
+  rotateZ(-PI/2);
+  popMatrix();
   
   for (pillars tree: trees){
    tree.display(); 
