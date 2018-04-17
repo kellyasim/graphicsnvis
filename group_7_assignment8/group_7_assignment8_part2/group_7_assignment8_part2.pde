@@ -3,7 +3,7 @@ pillars[] trees;
 int treeHeight, volume, girth, id;
 
 void setup() {
-  size(1500,800,P3D);
+  size(800,500,P3D);
   
   table = loadTable("trees.csv", "header");
   
@@ -17,16 +17,14 @@ void setup() {
     trees[id-1] = new pillars(volume, girth, treeHeight);
     println("#" + id + " (" + girth, treeHeight, volume + ")");
   }
-  
-
 }
 
 void draw(){
   background (110);
   int focusx = mouseX - 100;
-  int focusy = -(mouseY) +100;
-  camera(10, 100, -150, //camera position
-         focusx, focusy, 10, //focus point
+  int focusy = -mouseY;
+  camera(-50, 200, -150, //camera position
+         focusx, focusy, 100, //focus point
          0, -1, 0); //up
          
   line( 0, 0, 0, 0, 1000, 0); //y axis
