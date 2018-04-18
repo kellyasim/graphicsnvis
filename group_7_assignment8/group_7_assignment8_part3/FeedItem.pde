@@ -6,13 +6,21 @@ class FeedItem {
   private Date pubDate;
   private Thumbnail thumbnail;
   private String type;
+  private color c;
 
   public FeedItem(String title, String description, String link, String pubDate, Thumbnail thumbnail){
     this.title = title;
     this.description = description;
     this.link = link;
     this.pubDate = convertDate(pubDate);
-    this.thumbnail = thumbnail; 
+    this.thumbnail = thumbnail;
+  }
+  
+  public void setColor(color c) {
+    this.c = c;
+  }
+  public color getColor() {
+    return this.c;
   }
 
   public void setType(String type) {

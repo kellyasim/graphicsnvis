@@ -44,6 +44,7 @@ void sidePanel(){
     textSize[i] = textWidth(feedTitles[i]);
   }
   
+  fill(0, 102, 153);
   text("FEEDS:", 20 , 175);
   
   for(int i = 0; i < 5; i++) {
@@ -127,6 +128,7 @@ void feed() {
   int j = 0;
   for(int i = feedIndex; i < feedIndex + 4; i++) {
     FeedItem feedItem = currentFeed.getItem(i);
+    fill(feedItem.getColor());
     text(feedItem.getTitle(), width/3 + 250, 130 + j * 150 + 20, 500, 125);
     PImage webImg = loadImage(feedItem.thumbnail.link, "png");
     webImg.resize(0, 125);
@@ -150,7 +152,7 @@ Feed getFeed(String url) {
   String feedTitle = channel.getChildren("title")[0].getContent(); 
   String feedDate = channel.getChildren("lastBuildDate")[0].getContent(); 
   XML[] items = channel.getChildren("item");
-  
+  color c = color(int(random(255)),int(random(255)),int(random(255)));
   Feed feed = new Feed(feedTitle, feedDate);
   for (int i = 0; i < items.length; i++) {   
       String title = items[i].getChildren("title")[0].getContent();
@@ -163,6 +165,7 @@ Feed getFeed(String url) {
       Thumbnail thumbnail = new Thumbnail(thumbnailLink, new PVector(thumbnailHeight, thumbnailWidth));
       
       FeedItem item = new FeedItem(title, description, link, pubDate, thumbnail);
+      item.setColor(c);
       item.setType(feedTitle);
       feed.add(item);
   }
