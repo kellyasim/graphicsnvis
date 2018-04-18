@@ -3,15 +3,37 @@ class FeedItem {
   private String title;
   private String description;
   private String link;
-  private String pubDate;
+  private Date pubDate;
   private Thumbnail thumbnail;
+  private String type;
 
   public FeedItem(String title, String description, String link, String pubDate, Thumbnail thumbnail){
     this.title = title;
     this.description = description;
     this.link = link;
-    this.pubDate = pubDate;
+    this.pubDate = convertDate(pubDate);
     this.thumbnail = thumbnail; 
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getType() {
+    return this.type;
+  }
+  
+  private Date convertDate(String dateString) {
+    SimpleDateFormat formatter = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
+
+    try {
+      Date date = formatter.parse(dateString);
+      return date;
+
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
+    return null;
   }
 
   public void setTitle(String title){
@@ -36,9 +58,10 @@ class FeedItem {
   }
   
   private void setPubDate(String pubDate){
-    this.pubDate = pubDate;
+    this.pubDate = convertDate(pubDate);
   }
-  private String getPubDate(){
+  
+  private Date getPubDate(){
     return this.pubDate;
   }
   
