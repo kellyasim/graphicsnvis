@@ -12,8 +12,10 @@ class pillars{
   
   void display (){
     pushMatrix();
+    fill(255);
     translate(xpos,pill_height/2, zpos);
     box(10,pill_height,10);
+    noFill();
     popMatrix();
   }
   
