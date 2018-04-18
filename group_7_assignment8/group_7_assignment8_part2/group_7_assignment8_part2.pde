@@ -31,7 +31,11 @@ void draw(){
   camera(camx, camy, camz, //camera position
          focusx, focusy, focusz, //focus point
          0, -1, 0); //up
-  
+         
+  if (birdEye==true) {
+    translate(700,0,100);
+    rotateY(3*PI/2); 
+  }
   pushMatrix();  //creating floor of graph
   rotateX(PI/2);
   fill(#FCDEB5);         
@@ -44,6 +48,7 @@ void draw(){
   fill(0);
   line( 0, 0, 0, 0, 500, 0); //x axis
   pushMatrix();
+  
   rotateX(3*PI/2);
   textSize(50);  
   text("Volume of timber in cubic feet", 380,0,0);
@@ -80,7 +85,6 @@ void mouseClicked(){
     pushMatrix();
     camx=400; camy=1100; camz=400;
     focusx=350; focusy=0; focusz=400;
-    rotateX(PI/2);
     popMatrix();
     birdEye = true;
     
