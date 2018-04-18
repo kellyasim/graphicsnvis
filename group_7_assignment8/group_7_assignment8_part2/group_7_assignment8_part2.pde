@@ -1,7 +1,7 @@
 Table table;
 pillars[] trees;
 int treeHeight, volume, girth, id;
-Boolean birdEye = false;
+Boolean birdEye = true;
 int camx,camy,camz,focusx,focusy,focusz;
 
 void setup() {
@@ -28,6 +28,11 @@ void draw(){
     focusy = -mouseY + 100;
   }
 
+  if (birdEye == true){
+   pushMatrix();
+   rotateY(PI/2);
+   popMatrix();
+  }
   camera(camx, camy, camz, //camera position
          focusx, focusy, focusz, //focus point
          0, -1, 0); //up
@@ -39,18 +44,21 @@ void draw(){
   noFill();
   popMatrix();
   
+  textSize(50); 
+  
+  textAlign(CENTER,TOP);
   fill(0);
   line( 0, 0, 0, 0, 500, 0); //x axis
   pushMatrix();
   rotateX(3*PI/2);
-  text("Volume of timber in cubic feet", 35,0,-40);
+  text("Volume of timber in cubic feet", 400,10,-200);
   rotateX(-3*PI/2);
   popMatrix();
   
   line( 0, 0, 0, 500, 0, 0); //y axis
   pushMatrix();
   rotateX(PI);
-  text("Tree Diameter in inches", 20,-20,0);
+  text("Tree Diameter in inches", 300,-20,0);
   rotateX(-PI);
   popMatrix();
   
@@ -58,7 +66,7 @@ void draw(){
   pushMatrix();
   rotateX(3*PI/2);
   rotateZ(PI/2);
-  text("Tree Height in feet", -175,10,-50);
+  text("Tree Height in feet", -300,10,0);
   rotateX(-3*PI/2);
   rotateZ(-PI/2);
   popMatrix();
@@ -72,8 +80,10 @@ void mouseClicked(){
   println("boop");
   if (birdEye == false){
     println("pls work");
-    camx=400; camy=1000; camz=400;
-    focusx=400; focusy=0; focusz=400;
+    pushMatrix();
+    camx=400; camy=1200; camz=400;
+    focusx=350; focusy=0; focusz=400;
+    popMatrix();
     birdEye = true;
     
   } else{

@@ -2,10 +2,16 @@ Group7- a8 description
 
 >>Summarizes the visualization functionalities and implementations, what the included classes do, and any unexpected challenges. Also document which group member worked on which part of the assignment.
 
-PART I- 
+PART I- (Abel)
 
 
-PART II- 
+PART II- (Kelly)
+3D plot of the 3 variables from tree.csv. tree.csv has 31 trees whose volume (volume of timber in cubic feet), girth (tree diameter in inches), and height (in feet) are plotted on the x,y,z axes; respectively. After resetting the camera, there are 2 views of the 3D plot that can be toggled between with mouse clicks. One is a 3/4 view of the plot in which the camera focuses on the mouseX and mouseY values. The other view is a bird's eye view to see the x (volume, ft^3) and z (height, ft) values. 
+
+PART III- (Bongani)
 
 
-PART III- 
+
+
+
+Bongani has done RSS feeds before so he volunteered to do that part of the project since he felt that he didn't contribute as much to previous assignments.
