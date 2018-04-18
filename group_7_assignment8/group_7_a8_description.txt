@@ -6,7 +6,11 @@ PART I- (Abel)
 
 
 PART II- (Kelly)
-3D plot of the 3 variables from tree.csv. tree.csv has 31 trees whose volume (volume of timber in cubic feet), girth (tree diameter in inches), and height (in feet) are plotted on the x,y,z axes; respectively. After resetting the camera, there are 2 views of the 3D plot that can be toggled between with mouse clicks. One is a 3/4 view of the plot in which the camera focuses on the mouseX and mouseY values. The other view is a bird's eye view to see the x (volume, ft^3) and z (height, ft) values. 
+3D plot of the 3 variables from tree.csv. tree.csv has 31 trees whose volume (volume of timber in cubic feet), girth (tree diameter in inches), and height (in feet) are plotted on the x,y,z axes; respectively. To visualize the data, I created a pillars class with a 10x10 rectangular prism plotted at the volume((x-5)*10) and height((z-60)*20) data point- was shifted to condense the data. For the height of the prism I used girth of the tree(y*10) for better visualization.
+
+After resetting the camera, there are 2 views of the 3D plot that can be toggled between with mouse clicks. One is a 3/4 view of the plot in which the camera focuses on the mouseX and mouseY values. The other view is a bird's eye view to see the x (volume, ft^3) and z (height, ft) values. 
+
+Challenges appeared when labeling the graph, and keeping the camera position and focus on the graph amist all the rotations and translations.
 
 PART III- (Bongani)
 
