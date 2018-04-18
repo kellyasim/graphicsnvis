@@ -50,10 +50,15 @@ void sidePanel(){
   for(int i = 0; i < 5; i++) {
     
     if(isClicked[i]){
+    ellipse(10, 225 + i * 40 - 6 , 10, 10);
       fill(0, 102, 153);
     } else {
+      
+      fill(255);
+    ellipse(10, 225 + i * 40 - 6 , 10, 10);
       fill(30);
     }
+      
     text(feedTitles[i], 20 , 225 + i * 40 );
   }
   
@@ -88,7 +93,6 @@ void mouseClicked(){
     }
   }
   
-  println(mouseX, mouseY);
 }
 
 void setup(){
