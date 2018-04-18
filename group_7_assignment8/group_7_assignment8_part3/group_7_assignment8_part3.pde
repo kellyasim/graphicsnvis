@@ -8,6 +8,10 @@ Feed usNews;
 
 Feed superFeed;
 
+Feed currentFeed;
+
+Feed[] feedSwitch;   
+
 String dateText;
 
 float[] textSize;
@@ -34,7 +38,7 @@ void sidePanel(){
   String[] feedTitles = { superFeed.getTitle(), africaNews.getTitle(),
                         asiaNews.getTitle(), europeNews.getTitle(),
                         latinNews.getTitle(), usNews.getTitle() };
-   
+
 
   for(int i = 0; i < 5; i++) {
     textSize[i] = textWidth(feedTitles[i]);
@@ -62,15 +66,11 @@ void sidePanel(){
 void mouseClicked(){
   for(int i = 0; i < 5; i++){
     if(mouseX > 20 && mouseX < 20 + textSize[i] && mouseY > 225 + i * 40 - 20 && mouseY < 225 + i * 40 + 10) {
-      isClicked[i] = !isClicked[i];
-      if(i == 0) {
-        for(int j = 1; j < 5; j++){
-          isClicked[j] = false;
-        }
-      } else {
-        isClicked[0] = false;
-      }
-    }
+      isClicked = new boolean[6];
+      isClicked[i] = true;
+      feedIndex = 0;
+      currentFeed = feedSwitch[i];
+    } 
   }
   
   if(mouseX > 20 && mouseX < 35 && mouseY >  225 + 5 * 40 && mouseY < 225 + 7 * 40 + textWidth(">>") ) {
@@ -86,6 +86,8 @@ void mouseClicked(){
       feedIndex = superFeed.size();
     }
   }
+  
+  println(mouseX, mouseY);
 }
 
 void setup(){
@@ -107,6 +109,15 @@ void setup(){
   superFeed.addAll(latinNews.getAll());
   superFeed.addAll(usNews.getAll());
   dateText = superFeed.getDate().toString();
+  currentFeed = superFeed;
+  feedSwitch = new Feed[6];
+  feedSwitch[0] = superFeed;
+  feedSwitch[1] = africaNews;
+  feedSwitch[2] = asiaNews; 
+  feedSwitch[3] = europeNews;
+  feedSwitch[4] = latinNews;
+  feedSwitch[5] = usNews;  
+
   
 }
 
@@ -115,14 +126,22 @@ void feed() {
   textSize(20);
   int j = 0;
   for(int i = feedIndex; i < feedIndex + 4; i++) {
-    FeedItem feedItem = superFeed.getItem(i);
+    FeedItem feedItem = currentFeed.getItem(i);
     text(feedItem.getTitle(), width/3 + 250, 130 + j * 150 + 20, 500, 125);
     PImage webImg = loadImage(feedItem.thumbnail.link, "png");
     webImg.resize(0, 125);
     image(webImg, width/3,  130 + j * 150);
     j++;
+    if(mouseX > width/3 + 250 && mouseX < width/3 + 750 && mouseY > j * 150  && mouseY < j * 150 + 125) {
+      if(mousePressed){
+      
+     link(feedItem.getLink());
+   }
+      text(feedItem.getDescription(), 16, 494, 320, 250);
+    }
   }
 }
+
 
 Feed getFeed(String url) {
   XML rss = loadXML(url);   
