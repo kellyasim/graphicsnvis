@@ -70,6 +70,12 @@ class Feed {
     return items.size();
   }
   
+  public void setColor(color c) {
+    for(int i = 0; i < this.size(); i++){
+      this.items.get(i).setColor(c);
+    }
+  }
+  
   public FeedItem getItem(int i){
     return items.get(i);
   }

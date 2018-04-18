@@ -6,6 +6,13 @@ Feed europeNews;
 Feed latinNews;
 Feed usNews;
 
+color c0 = #000000;
+color c1 = #5286F3;
+color c2 = #FF7F1A;
+color c3 = #FF5964;
+color c4 = #A54657;
+color c5 = #38618C;
+
 Feed superFeed;
 
 Feed currentFeed;
@@ -39,24 +46,25 @@ void sidePanel(){
                         asiaNews.getTitle(), europeNews.getTitle(),
                         latinNews.getTitle(), usNews.getTitle() };
 
+  color[] colors = {c0,c1, c2, c3, c4, c5};
 
-  for(int i = 0; i < 5; i++) {
+  for(int i = 0; i < 6; i++) {
     textSize[i] = textWidth(feedTitles[i]);
   }
   
   fill(0, 102, 153);
   text("FEEDS:", 20 , 175);
   
-  for(int i = 0; i < 5; i++) {
+  for(int i = 0; i < 6; i++) {
     
     if(isClicked[i]){
+      fill(colors[i]);
     ellipse(10, 225 + i * 40 - 6 , 10, 10);
-      fill(0, 102, 153);
     } else {
       
       fill(255);
     ellipse(10, 225 + i * 40 - 6 , 10, 10);
-      fill(30);
+      fill(colors[i]);
     }
       
     text(feedTitles[i], 20 , 225 + i * 40 );
@@ -70,8 +78,8 @@ void sidePanel(){
 
 
 void mouseClicked(){
-  for(int i = 0; i < 5; i++){
-    if(mouseX > 20 && mouseX < 20 + textSize[i] && mouseY > 225 + i * 40 - 20 && mouseY < 225 + i * 40 + 10) {
+  for(int i = 0; i < 6; i++){
+    if(mouseX > 0 && mouseX < 20 + textSize[i] && mouseY > 225 + i * 40 - 20 && mouseY < 225 + i * 40 + 10) {
       isClicked = new boolean[6];
       isClicked[i] = true;
       feedIndex = 0;
@@ -104,10 +112,15 @@ void setup(){
   background(255, 255, 255);
   superFeed = new Feed("BBC World News Feed", new Date());
   africaNews = getFeed("http://feeds.bbci.co.uk/news/world/africa/rss.xml");
+  africaNews.setColor(c1);
   asiaNews = getFeed("http://feeds.bbci.co.uk/news/world/asia/rss.xml");
+  asiaNews.setColor(c2);
   europeNews = getFeed("http://feeds.bbci.co.uk/news/world/europe/rss.xml");
+  europeNews.setColor(c3);
   latinNews = getFeed("http://feeds.bbci.co.uk/news/world/latin_america/rss.xml");
+  latinNews.setColor(c4);
   usNews = getFeed("http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml");
+  usNews.setColor(c5);
   superFeed.addAll(africaNews.getAll());
   superFeed.addAll(asiaNews.getAll());
   superFeed.addAll(europeNews.getAll());
@@ -156,7 +169,7 @@ Feed getFeed(String url) {
   String feedTitle = channel.getChildren("title")[0].getContent(); 
   String feedDate = channel.getChildren("lastBuildDate")[0].getContent(); 
   XML[] items = channel.getChildren("item");
-  color c = color(int(random(255)),int(random(255)),int(random(255)));
+  //color c = color(int(random(255)),int(random(255)),int(random(255)));
   Feed feed = new Feed(feedTitle, feedDate);
   for (int i = 0; i < items.length; i++) {   
       String title = items[i].getChildren("title")[0].getContent();
@@ -169,7 +182,7 @@ Feed getFeed(String url) {
       Thumbnail thumbnail = new Thumbnail(thumbnailLink, new PVector(thumbnailHeight, thumbnailWidth));
       
       FeedItem item = new FeedItem(title, description, link, pubDate, thumbnail);
-      item.setColor(c);
+      //item.setColor(c);
       item.setType(feedTitle);
       feed.add(item);
   }
