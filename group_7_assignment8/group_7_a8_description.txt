@@ -15,9 +15,4 @@ After resetting the camera, there are 2 views of the 3D plot that can be toggled
 Challenges appeared when labeling the graph, and keeping the camera position and focus on the graph amist all the rotations and translations.
 
 PART III- (Bongani)
-
-
-
-
-
-Bongani has done RSS feeds before so he volunteered to do that part of the project since he felt that he didn't contribute as much to previous assignments.
+Bongani has done RSS feeds before so he volunteered to do that part of the project since he felt that he didn't contribute as much to previous assignments. From Prior expriences i choose use BBC feeds because they are updated frequently and offer diverse subjects. I created a Feed, Thumbnail, FeedItem classes to easier organized info scrapped from xml. from there issue started to arise with displaying thumbnails due to hte fact that the image its self has to be fetched from online. noting this, there should be time taken to allow them to be fetched. dealing with pagniation was a interesting obstcale. to simplify other potential issues i though it would be easier to eagerly load info.

@@ -60,6 +60,7 @@ class Feed {
                      public int compare(FeedItem item, FeedItem otherItem) {
                         return item.getPubDate().compareTo(otherItem.getPubDate()); 
                      }});
+    Collections.reverse(items);
   }
   
   public ArrayList<FeedItem> getAll() {
