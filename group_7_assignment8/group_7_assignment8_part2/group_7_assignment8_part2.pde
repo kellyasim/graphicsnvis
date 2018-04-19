@@ -97,7 +97,7 @@ void mouseClicked(){
     println("pls work");
     pushMatrix();
     camx=400; camy=1100; camz=400;
-    focusx=350; focusy=0; focusz=400;
+    focusx=370; focusy=0; focusz=400;
     popMatrix();
     birdEye = true;
     
