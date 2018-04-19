@@ -35,7 +35,7 @@ void draw(){
   if (birdEye==true) {
     translate(700,0,100);
     rotateY(3*PI/2); 
-    text();
+    //text();
     for (i=00;i<800;i+=50){
       line(i,0,0,i,0,800); 
     }
