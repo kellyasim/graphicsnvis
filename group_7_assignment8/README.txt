@@ -1,9 +1,15 @@
-Press the "play" button to start the game. 
+Press the "play" button to start each visualization. 
 
 Further Instructions:
 
 PART I- 
-
+pressing 0 will display actual weight minus reported weight for both genders
+pressing 1 will display actual height minus reported height for both genders
+pressing 2 will display actual weight minus reported weight for men
+pressing 3 will display actual height minus reported height for men
+pressing 4 will display actual weight minus reported weight for women
+pressing 5 will display actual height minus reported height for women
+pressing 9 will toggle the display for the outliers
 
 
 PART II-

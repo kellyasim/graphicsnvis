@@ -3,7 +3,9 @@ Group7- a8 description
 >>Summarizes the visualization functionalities and implementations, what the included classes do, and any unexpected challenges. Also document which group member worked on which part of the assignment.
 
 PART I- (Abel)
+This visualization uses the Davis dataset of "Self-Reports of Height and Weight." The graph displays the difference between a person's actual weight/height and their self-reported weight/height in kilograms and centimeters respectively. Each rectangle represents an individual, and each tick mark on the y axis represents one unit of measurement, either cm or kg. If the bar goes in the positive y direction, then the person underestimated their measurement. If the bar goes in the negative y direction, then the person overestimated their measurement. The data from the csv is stored in an array of type Person. Person is a class defined to store the data from one row of the dataset. 
 
+There are a couple of people who responded oddly, and this resulted in some outliers. Most differences are around 4 units, but there are a couple that are greater than 100 for some reason. Because of this i included an option to exclude these outliers from the visualization.
 
 PART II- (Kelly)
 3D plot of the 3 variables from tree.csv. tree.csv has 31 trees whose volume (volume of timber in cubic feet), girth (tree diameter in inches), and height (in feet) are plotted on the x,y,z axes; respectively. To visualize the data, I created a pillars class with a 10x10 rectangular prism plotted at the volume((x-5)*10) and height((z-60)*20) data point- was shifted to condense the data. For the height of the prism I used girth of the tree(y*10) for better visualization.
