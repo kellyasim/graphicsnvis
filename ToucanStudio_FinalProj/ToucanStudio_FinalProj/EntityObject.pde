@@ -54,7 +54,7 @@ class EntityObject{
   
   void damage(int d){
     hp -= d;
-    if(hp == 0){
+    if(hp <= 0){
       death();
     }
   }
