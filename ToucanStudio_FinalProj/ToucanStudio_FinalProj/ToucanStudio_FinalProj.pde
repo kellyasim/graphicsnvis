@@ -52,7 +52,7 @@ void new_frame(){
 
 void pause(){
   //background(0);
-  fill(0,0,0,180);
+  fill(0,0,0,190);
   rectMode(CENTER);
   rect(500,500,1000,1000);
   fill(230);
