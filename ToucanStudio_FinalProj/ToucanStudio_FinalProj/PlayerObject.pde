@@ -15,6 +15,7 @@ class PlayerObject extends EntityObject {
     int s;
     int row;
     boolean isMoving;
+    
     PlayerObject(int health, int xpos, int ypos) {
         super(health, xpos, ypos);
         isMoving = false;
@@ -28,6 +29,7 @@ class PlayerObject extends EntityObject {
         speed = 5;
         lives = 3;
         swing_direction = new PVector(0, 0);
+        swing_render = swing_direction;
         weapon = new PImage[4];
         for (int i = 0; i < 4; i++) {
             String file = "bolt_" + nf(i, 1) + ".png";
@@ -98,7 +100,7 @@ class PlayerObject extends EntityObject {
     image(weapon[direction], swing_render.x, swing_render.y);
     return(swing_direction);
 
-  }
+    }
 
     void move() {
         int r = 50 >> 1;
