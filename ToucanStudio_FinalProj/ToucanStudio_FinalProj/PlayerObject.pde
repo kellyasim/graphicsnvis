@@ -13,9 +13,12 @@ class PlayerObject extends EntityObject {
     int sX;
     int sY;
     int s;
-
+    int row;
+    boolean isMoving;
     PlayerObject(int health, int xpos, int ypos) {
         super(health, xpos, ypos);
+        isMoving = false;
+        row = 192;
         w = 64;
         h = 64;
         sX = 64;
@@ -55,9 +58,7 @@ class PlayerObject extends EntityObject {
 
     void display() {
         if (alive) {
-            fill(#DF52FF);
-            ellipse(position.x, position.y, 50, 50);
-            fill(255);
+            s = animate(s, row);
         } else {
             fill(255, 0, 0);
             textSize(100);
@@ -111,8 +112,10 @@ class PlayerObject extends EntityObject {
         if (sX > 192) {
             sX = 0;
         }
-        //copy(this.sprite, sX, sY, w, h, position.x, position.y, 64, 64);
-        
+        copy(this.sprite, sX, sY, w, h, int(position.x), int(position.y), 64, 64);
+        if(isMoving) {
+          return 0;
+        }
         if (frameCount % 10 == 0) {
             return sX + 64;
         } else {
@@ -125,21 +128,27 @@ class PlayerObject extends EntityObject {
         switch (k) {
             case 'W':
             case UP:
+                row = 192;
                 return isUp = b;
 
             case 'S':
             case DOWN:
+                row = 0;
                 return isDown = b;
 
             case 'A':
             case LEFT:
+                row = 64;
                 return isLeft = b;
 
             case 'D':
             case RIGHT:
+                row = 128;
                 return isRight = b;
 
             default:
+                row = (isDown)? 0 : 192;
+                isMoving = b;
                 return b;
         }
     }
