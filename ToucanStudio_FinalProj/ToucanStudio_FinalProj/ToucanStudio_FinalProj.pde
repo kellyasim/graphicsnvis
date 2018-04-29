@@ -57,27 +57,38 @@ void pause(){
   rect(500,500,1000,1000);
   fill(230);
   textSize(48);
-  text("-PAUSED-", 400,350);
-  textSize(32);
+
+  PImage toucan = loadImage("toucan.png");
+  toucan.resize(70,70);
+  image(toucan,60,168);
+  
+  text("ToucanStudios Presents:", 100,250);
+
+  textSize(120);
+  text("Turtlepond", 80,420);
+  text("Adventures",230,520);
+  
+  textSize(32);  
   PImage wasd = loadImage ("wasd.png");
   wasd.resize(200,140);
-  image(wasd,70,400);
-  text("To move", 100, 580);
+  image(wasd,70,600);
+  text("To move", 100, 780);
   
   PImage j = loadImage("j.png");
   j.resize(65,65);
-  image(j,380,475);
-  text("To attack", 340, 580);
+  image(j,380,675);
+  text("To attack", 340, 780);
   
   PImage p = loadImage("p.png");
   p.resize(65,65);
-  image(p, 580, 475);
-  text("Pause", 570, 580);
+  image(p, 580, 675);
+  text("Pause", 570, 780);
   
   PImage r = loadImage("r.png");
   r.resize(65,65);
-  image(r,780,475);
-  text("Restart", 760, 580);
+  image(r,780,675);
+  text("Restart", 760, 780);
+  
   // CODE TO RECORDS
   //text("'R' to start/stop recording", 100, 650);
   pause = !pause;
