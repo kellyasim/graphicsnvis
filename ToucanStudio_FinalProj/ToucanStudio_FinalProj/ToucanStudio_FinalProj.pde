@@ -72,12 +72,12 @@ void pause(){
   PImage wasd = loadImage ("wasd.png");
   wasd.resize(200,140);
   image(wasd,70,600);
-  text("To move", 100, 780);
+  text("Move", 130, 780);
   
   PImage j = loadImage("j.png");
   j.resize(65,65);
   image(j,380,675);
-  text("To attack", 340, 780);
+  text("Attack", 365, 780);
   
   PImage p = loadImage("p.png");
   p.resize(65,65);
