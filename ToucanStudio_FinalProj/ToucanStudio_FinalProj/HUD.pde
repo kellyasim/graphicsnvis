@@ -26,9 +26,10 @@ class HUD{
     text("enemies: ", 25, 960);
     fill(255, 0, 0);
     ellipseMode(CORNER);
+    PImage heart = loadImage("heart.png");
+    heart.resize(50,50);
     for(int i=0;i<player.return_lives();i++){
-      ellipse(60*i+160, 860, 50,50);
-      
+      image(heart, 60*i+160,860);      
     }
     
     fill(0,255,0);
