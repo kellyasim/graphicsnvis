@@ -108,9 +108,11 @@ void sound(){
   PImage soundOn = loadImage ("soundOn.png");
   soundOn.resize(70,50);
   if (sound){
-    image(soundOn, 800,850);
+    image(soundOn, 900,850);
+    bkgdSound.play();
   }else{
-    image(mute, 800,850);
+    image(mute, 900,850);
+    bkgdSound.stop();
   }
 }
 
