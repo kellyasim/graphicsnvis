@@ -25,6 +25,8 @@ void setup(){
 void draw(){
   if(!pause && player.return_lives() > 0){
     new_frame();
+    player.move();
+    //player.display();
   }
   // CODE TO RECORD
   //if(isRecording) {
@@ -82,5 +84,9 @@ void keyPressed(){
   //if(key == 'r' || key == 'R'){
   //  isRecording = !isRecording;
   //}
-  player.control(key);
+  player.setMove(keyCode, true);
+}
+
+void keyReleased() {
+  player.setMove(keyCode, false);
 }

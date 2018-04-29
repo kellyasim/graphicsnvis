@@ -4,6 +4,8 @@ class PlayerObject extends EntityObject{
   PVector swing_direction;
   PVector swing_render;
   PImage [] weapon;
+  boolean isLeft, isRight, isUp, isDown;
+  int x, y;
   
   PlayerObject(int health, int xpos, int ypos){
     super(health, xpos, ypos);
@@ -31,15 +33,6 @@ class PlayerObject extends EntityObject{
             break;
         }
         weapon[i] = newImage;
-    }
-  }
-
-  void control(char input){
-    if(check_collision()){
-      if(input == 'w' || input == 'W'){ position.y -= speed; direction = 0; }
-      if(input == 'a' || input == 'A'){ position.x -= speed; direction = 1; }
-      if(input == 's' || input == 'S'){ position.y += speed; direction = 2; }
-      if(input == 'd' || input == 'D'){ position.x += speed; direction = 3; }
     }
   }
   
@@ -90,5 +83,34 @@ class PlayerObject extends EntityObject{
     
     image(weapon[direction], swing_render.x, swing_render.y);
     return(swing_direction);
+  }
+  
+   void move() {
+    int r = 50>>1;
+    position.x = constrain(position.x + speed*(int(isRight) - int(isLeft)), r, width  - r);
+    position.y = constrain(position.y + speed*(int(isDown)  - int(isUp)),   r, height - r);
+  }
+ 
+  boolean setMove(int k, boolean b) {
+    switch (k) {
+    case 'W':
+    case UP:
+      return isUp = b;
+ 
+    case 'S':
+    case DOWN:
+      return isDown = b;
+ 
+    case 'A':
+    case LEFT:
+      return isLeft = b;
+ 
+    case 'D':
+    case RIGHT:
+      return isRight = b;
+ 
+    default:
+      return b;
+    }
   }
 }
