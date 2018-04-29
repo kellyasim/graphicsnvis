@@ -67,35 +67,37 @@ class PlayerObject extends EntityObject {
         }
     }
 
-    PVector attack() {
-        switch (direction) {
-            case 0:
-                swing_direction.x = position.x;
-                swing_direction.y = position.y - 70;
-                swing_render = swing_direction;
-                break;
-            case 1:
-                swing_direction.x = position.x - 70;
-                swing_direction.y = position.y;
-                swing_render = swing_direction;
-                break;
-            case 2:
-                swing_direction.x = position.x;
-                swing_direction.y = position.y + 70;
-                swing_render = position;
-                break;
-            case 3:
-                swing_direction.x = position.x + 70;
-                swing_direction.y = position.y;
-                swing_render = position;
-                break;
-            default:
-                break;
-        }
-
-        image(weapon[direction], swing_render.x, swing_render.y);
-        return (swing_direction);
+    PVector attack(){
+    
+    if(isUp){
+      swing_direction.x = position.x;
+          swing_direction.y = position.y - 70;
+          swing_render = swing_direction;
+          direction = 0;
     }
+    if(isLeft){
+          swing_direction.x = position.x - 70;
+          swing_direction.y = position.y;
+          swing_render = swing_direction;
+          direction = 1;
+    }
+    if(isDown){
+          swing_direction.x = position.x;
+          swing_direction.y = position.y + 70;
+          swing_render = position;
+          direction = 2;
+    }
+    if(isRight){
+          swing_direction.x = position.x + 70;
+          swing_direction.y = position.y;
+          swing_render = position;
+          direction = 3;
+    }
+    
+    image(weapon[direction], swing_render.x, swing_render.y);
+    return(swing_direction);
+
+  }
 
     void move() {
         int r = 50 >> 1;
@@ -109,7 +111,7 @@ class PlayerObject extends EntityObject {
         if (sX > 192) {
             sX = 0;
         }
-        copy(this.sprite, sX, sY, w, h, position.x, position.y, 64, 64);
+        //copy(this.sprite, sX, sY, w, h, position.x, position.y, 64, 64);
         
         if (frameCount % 10 == 0) {
             return sX + 64;
