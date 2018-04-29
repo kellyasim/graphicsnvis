@@ -51,17 +51,33 @@ void new_frame(){
 }
 
 void pause(){
-  fill(0, 102, 153);
-  //textSize(48);
-  //text("-PAUSE-", 100,430);
-  textSize(20);
-  text ("As a lone jellyfish, ", 100, 430); 
-  text ("defeat as many turtles to gain your freedom", 100, 460);
+  //background(0);
+  fill(0,0,0,180);
+  rectMode(CENTER);
+  rect(500,500,1000,1000);
+  fill(230);
+  textSize(48);
+  text("-PAUSED-", 400,350);
   textSize(32);
-  text("Use 'WASD' to move", 100, 500);
-  text("'J' to attack", 100, 550);
-  text("'P' to pause/unpause", 100, 600);
-  text("'R' to restart", 100, 650);
+  PImage wasd = loadImage ("wasd.png");
+  wasd.resize(200,140);
+  image(wasd,70,400);
+  text("To move", 100, 580);
+  
+  PImage j = loadImage("j.png");
+  j.resize(65,65);
+  image(j,380,475);
+  text("To attack", 340, 580);
+  
+  PImage p = loadImage("p.png");
+  p.resize(65,65);
+  image(p, 580, 475);
+  text("Pause", 570, 580);
+  
+  PImage r = loadImage("r.png");
+  r.resize(65,65);
+  image(r,780,475);
+  text("Restart", 760, 580);
   // CODE TO RECORDS
   //text("'R' to start/stop recording", 100, 650);
   pause = !pause;
