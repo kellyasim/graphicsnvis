@@ -1,5 +1,5 @@
-import processing.sound.*;
-SoundFile bkgdSound;
+//import processing.sound.*;
+//SoundFile bkgdSound;
 boolean sound;
 PlayerObject player;
 HUD hud;
@@ -11,8 +11,8 @@ MapElement [] levels;
 //boolean isRecording = false;
 
 void setup(){
-  bkgdSound = new SoundFile(this, "PkmonSealedChamber.mp3");
-  bkgdSound.play();
+  //bkgdSound = new SoundFile(this, "PkmonSealedChamber.mp3");
+  //bkgdSound.play();
   size(1000,1000);
   frameRate(20);
   player = new PlayerObject(100,500,500);
@@ -109,10 +109,10 @@ void sound(){
   soundOn.resize(70,50);
   if (sound){
     image(soundOn, 900,850);
-    bkgdSound.play();
+    //bkgdSound.play();
   }else{
     image(mute, 900,850);
-    bkgdSound.stop();
+    //bkgdSound.stop();
   }
 }
 
