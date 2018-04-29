@@ -27,6 +27,7 @@ class PlayerObject extends EntityObject {
         sprite = loadImage("sprite_boy.png");
         speed = 5;
         lives = 3;
+        damage = 25;
         swing_direction = new PVector(0, 0);
         swing_render = swing_direction;
         weapon = new PImage[4];
@@ -151,5 +152,21 @@ class PlayerObject extends EntityObject {
                 row = (isDown)? 0 : 192;
                 return b;
         }
+    }
+    
+    void upgrade(int type, int boost){
+      switch(type){
+        case 0:
+          damage += boost;
+          break;
+        case 1:
+          hp += boost;
+          break;
+        case 2:
+          lives += boost;
+          break;
+        default:
+          break;
+      } 
     }
 }

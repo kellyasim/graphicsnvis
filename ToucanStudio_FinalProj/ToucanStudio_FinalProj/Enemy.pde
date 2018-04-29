@@ -2,7 +2,7 @@ class Enemy extends EntityObject{
   int radius;
   int turn = 0;
   int direction = int(random(4));
-  int damage = 20;
+  
   PImage frame;
   
   Enemy(int health, int r, int xpos, int ypos){
@@ -32,9 +32,7 @@ class Enemy extends EntityObject{
     }
   }
   
-  int return_damage(){
-    return damage;
-  }
+
   
   int return_direction(){
     return direction;

@@ -2,6 +2,7 @@ class EntityObject{
   int hp;
   int speed;
   int lives;
+  int damage = 20;
   boolean alive = true;
   PVector position;
 
@@ -56,6 +57,10 @@ class EntityObject{
     if(hp == 0){
       death();
     }
+  }
+    
+  int return_damage(){
+    return damage;
   }
   
   void death(){

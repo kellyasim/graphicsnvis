@@ -85,12 +85,21 @@ class MapElement{
     image(bkgd,560,560); 
     image(bkgd,840,560); 
     
-    if(frameCount % 200 == 0){
+    if(frameCount % 500 == 0){
       spawn_powerup();
     }
     for(ItemElement elt : power_ups){
       elt.display();
+      if( check_player_enemy_collision(elt.return_pos()) ){
+        println("item collected");
+        elt.go_away();
+        player.upgrade(elt.type, elt.boost);
+      }   
     }
+    
+    println("*******************");
+    println(player.damage);
+    println("**********************");
     
     //move enemies in the map
    
@@ -126,7 +135,7 @@ class MapElement{
     atk_dir = player.attack();
     for(Enemy enemy1 : enemies){
       if( check_atk_enemy(enemy1.return_position()) ){
-        enemy1.damage(25);
+        enemy1.damage( player.return_damage() );
         enemy1.recoil(player_pos, 15);
       }
     }
@@ -158,8 +167,8 @@ class MapElement{
   
   void spawn_powerup(){
     int rand = int(random(3));
-    int randx = int(random(1000));
-    int randy = int(random(800));
+    int randx = int(random(100,900));
+    int randy = int(random(100,700));
     power_ups[rand].set_pos(randx, randy);
   }
  

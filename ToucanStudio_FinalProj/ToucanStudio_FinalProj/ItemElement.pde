@@ -30,5 +30,10 @@ class ItemElement{
   void set_pos(int x, int y){
     position.x = x;
     position.y = y;
+    screentime = 100;
+  }
+  
+  void go_away(){
+    screentime = 0;
   }
 }
