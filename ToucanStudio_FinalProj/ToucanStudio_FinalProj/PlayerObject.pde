@@ -18,7 +18,6 @@ class PlayerObject extends EntityObject {
     
     PlayerObject(int health, int xpos, int ypos) {
         super(health, xpos, ypos);
-        isMoving = false;
         row = 192;
         w = 64;
         h = 64;
@@ -115,10 +114,10 @@ class PlayerObject extends EntityObject {
             sX = 0;
         }
         copy(this.sprite, sX, sY, w, h, int(position.x), int(position.y), 64, 64);
-        if(isMoving) {
+        if(!keyPressed) {
           return 0;
         }
-        if (frameCount % 10 == 0) {
+        if (frameCount % 2 == 0) {
             return sX + 64;
         } else {
             return sX;
@@ -150,7 +149,6 @@ class PlayerObject extends EntityObject {
 
             default:
                 row = (isDown)? 0 : 192;
-                isMoving = b;
                 return b;
         }
     }
