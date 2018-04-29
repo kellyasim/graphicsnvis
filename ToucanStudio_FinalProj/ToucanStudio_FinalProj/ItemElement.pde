@@ -34,6 +34,8 @@ class ItemElement{
   }
   
   void go_away(){
+    position.x = -100;
+    position.y = -100;
     screentime = 0;
   }
 }
