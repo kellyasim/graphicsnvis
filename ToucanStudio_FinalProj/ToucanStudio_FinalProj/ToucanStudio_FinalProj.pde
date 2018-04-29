@@ -1,5 +1,6 @@
 import processing.sound.*;
 SoundFile bkgdSound;
+boolean sound;
 PlayerObject player;
 HUD hud;
 boolean pause;
@@ -24,6 +25,7 @@ void setup(){
   new_frame();
   pause = false;
   pause();
+  sound = true;
 }
 
 void draw(){
@@ -32,6 +34,7 @@ void draw(){
     player.move();
     //player.display();
   }
+  sound();
   // CODE TO RECORD
   //if(isRecording) {
   //  saveFrame();
@@ -99,6 +102,18 @@ void pause(){
   fill(255);
 }
 
+void sound(){
+  PImage mute = loadImage ("mute.png");
+  mute.resize(70,50);
+  PImage soundOn = loadImage ("soundOn.png");
+  soundOn.resize(70,50);
+  if (sound){
+    image(soundOn, 800,850);
+  }else{
+    image(mute, 800,850);
+  }
+}
+
 void keyPressed(){
   if(key == 'p' || key == 'P'){
     pause();
@@ -112,7 +127,7 @@ void keyPressed(){
   }
   
   if (key == 'm' || key == 'M'){
-    setup();
+    sound = !sound;
   }
   
   // CODE TO RECORD
