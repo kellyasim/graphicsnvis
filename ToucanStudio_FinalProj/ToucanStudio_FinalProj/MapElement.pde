@@ -3,7 +3,9 @@ class MapElement{
   Enemy enemy1;
   PVector player_pos;
   PVector atk_dir;
-
+ 
+  ItemElement [] power_ups;
+  PImage newImage;
   PImage bkgd;
   PImage [] turtleup; 
   PImage [] turtledown; 
@@ -19,6 +21,18 @@ class MapElement{
   MapElement(PlayerObject p, int num_enemies){
     bkgd = loadImage("sand_bkgd.jpg");
     imgCt = 6;
+    
+    power_ups = new ItemElement[3];
+    newImage = loadImage("sword.png");
+    newImage.resize(50,50);
+    power_ups[0] = new ItemElement(0, 5, newImage);
+    newImage = loadImage("apple.png");
+    newImage.resize(50,50);
+    power_ups[1] = new ItemElement(1, 10, newImage);
+    newImage = loadImage("heart.png");
+    newImage.resize(50,50);
+    power_ups[2] = new ItemElement(2, 1, newImage);
+    
     turtle = new PImage[imgCt];
     turtleup = new PImage[imgCt];
     turtleleft = new PImage[imgCt];
@@ -28,7 +42,7 @@ class MapElement{
     
     for (int i = 0; i < imgCt; i ++){
         String file = "turtleup_0"+ nf(i,1)+ ".png";
-        PImage newImage = loadImage(file);
+        newImage = loadImage(file);
         newImage.resize(70,70);
         turtleup[i] = newImage;
         
@@ -70,6 +84,13 @@ class MapElement{
     image(bkgd,280,560); 
     image(bkgd,560,560); 
     image(bkgd,840,560); 
+    
+    if(frameCount % 200 == 0){
+      spawn_powerup();
+    }
+    for(ItemElement elt : power_ups){
+      elt.display();
+    }
     
     //move enemies in the map
    
@@ -134,4 +155,12 @@ class MapElement{
            player_pos.y < pos.y + 25 && 
            player_pos.y + 25 > pos.y;
   }
+  
+  void spawn_powerup(){
+    int rand = int(random(3));
+    int randx = int(random(1000));
+    int randy = int(random(800));
+    power_ups[rand].set_pos(randx, randy);
+  }
+ 
 }
