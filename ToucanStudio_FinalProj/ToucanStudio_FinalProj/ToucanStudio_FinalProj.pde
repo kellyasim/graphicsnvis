@@ -1,3 +1,5 @@
+import processing.sound.*;
+SoundFile bkgdSound;
 PlayerObject player;
 HUD hud;
 boolean pause;
@@ -8,6 +10,8 @@ MapElement [] levels;
 //boolean isRecording = false;
 
 void setup(){
+  bkgdSound = new SoundFile(this, "PkmonSealedChamber.mp3");
+  bkgdSound.play();
   size(1000,1000);
   frameRate(20);
   player = new PlayerObject(100,500,500);
@@ -104,6 +108,10 @@ void keyPressed(){
   }
   
   if(key == 'r' || key =='R'){
+    setup();
+  }
+  
+  if (key == 'm' || key == 'M'){
     setup();
   }
   
