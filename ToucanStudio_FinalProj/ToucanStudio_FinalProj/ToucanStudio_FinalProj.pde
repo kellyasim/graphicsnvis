@@ -11,7 +11,7 @@ MapElement [] levels;
 //boolean isRecording = false;
 
 void setup(){
-  bkgdSound = new SoundFile(this, "PkmonSealedChamber.mp3");
+  bkgdSound = new SoundFile(this, "PkmonCave.wav");
   bkgdSound.play();
   size(1000,1000);
   frameRate(20);
