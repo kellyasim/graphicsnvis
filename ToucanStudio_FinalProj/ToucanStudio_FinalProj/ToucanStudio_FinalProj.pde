@@ -34,7 +34,7 @@ void draw(){
     player.move();
     //player.display();
   }
-  sound();
+  //sound();
   // CODE TO RECORD
   //if(isRecording) {
   //  saveFrame();
@@ -129,6 +129,7 @@ void keyPressed(){
   
   if (key == 'm' || key == 'M'){
     sound = !sound;
+    sound();
   }
   
   // CODE TO RECORD
