@@ -64,7 +64,7 @@ void pause(){
   fill(230);
   textSize(48);
 
-  PImage toucan = loadImage("toucan.png");
+  PImage toucan = loadImage("Sprites/toucan.png");
   toucan.resize(70,70);
   image(toucan,60,168);
   
@@ -75,22 +75,22 @@ void pause(){
   text("Adventures",230,520);
   
   textSize(32);  
-  PImage wasd = loadImage ("wasd.png");
+  PImage wasd = loadImage ("Sprites/wasd.png");
   wasd.resize(200,140);
   image(wasd,70,600);
   text("Move", 130, 780);
   
-  PImage j = loadImage("j.png");
+  PImage j = loadImage("Sprites/j.png");
   j.resize(65,65);
   image(j,380,675);
   text("Attack", 365, 780);
   
-  PImage p = loadImage("p.png");
+  PImage p = loadImage("Sprites/p.png");
   p.resize(65,65);
   image(p, 580, 675);
   text("Pause", 570, 780);
   
-  PImage r = loadImage("r.png");
+  PImage r = loadImage("Sprites/r.png");
   r.resize(65,65);
   image(r,780,675);
   text("Restart", 760, 780);
@@ -102,9 +102,9 @@ void pause(){
 }
 
 void sound(){
-  PImage mute = loadImage ("mute.png");
+  PImage mute = loadImage ("Sprites/mute.png");
   mute.resize(70,50);
-  PImage soundOn = loadImage ("soundOn.png");
+  PImage soundOn = loadImage ("Sprites/soundOn.png");
   soundOn.resize(70,50);
   if (sound){
     image(soundOn, 900,850);

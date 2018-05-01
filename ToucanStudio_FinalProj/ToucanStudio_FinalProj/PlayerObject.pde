@@ -24,7 +24,7 @@ class PlayerObject extends EntityObject {
         sX = 64;
         sY = 64;
         s = 0;
-        sprite = loadImage("sprite_boy.png");
+        sprite = loadImage("Sprites/sprite_boy.png");
         speed = 5;
         lives = 3;
         damage = 25;
@@ -32,7 +32,7 @@ class PlayerObject extends EntityObject {
         swing_render = swing_direction;
         weapon = new PImage[4];
         for (int i = 0; i < 4; i++) {
-            String file = "bolt_" + nf(i, 1) + ".png";
+            String file = "Sprites/bolt_" + nf(i, 1) + ".png";
             PImage newImage = loadImage(file);
             switch (i) {
                 case 0:

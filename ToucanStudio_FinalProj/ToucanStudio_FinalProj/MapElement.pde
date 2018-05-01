@@ -19,17 +19,17 @@ class MapElement{
   
   
   MapElement(PlayerObject p, int num_enemies){
-    bkgd = loadImage("sand_bkgd.jpg");
+    bkgd = loadImage("Sprites/sand_bkgd.jpg");
     imgCt = 6;
     
     power_ups = new ItemElement[3];
-    newImage = loadImage("sword.png");
+    newImage = loadImage("Sprites/sword.png");
     newImage.resize(50,50);
     power_ups[0] = new ItemElement(0, 5, newImage);
-    newImage = loadImage("apple.png");
+    newImage = loadImage("Sprites/apple.png");
     newImage.resize(50,50);
     power_ups[1] = new ItemElement(1, 10, newImage);
-    newImage = loadImage("heart.png");
+    newImage = loadImage("Sprites/heart.png");
     newImage.resize(50,50);
     power_ups[2] = new ItemElement(2, 1, newImage);
     
@@ -41,22 +41,22 @@ class MapElement{
     enemies = new Enemy[num_enemies];
     
     for (int i = 0; i < imgCt; i ++){
-        String file = "turtleup_0"+ nf(i,1)+ ".png";
+        String file = "Sprites/turtleup_0"+ nf(i,1)+ ".png";
         newImage = loadImage(file);
         newImage.resize(70,70);
         turtleup[i] = newImage;
         
-        file = "turtleleft_0"+ nf(i,1)+ ".png";
+        file = "Sprites/turtleleft_0"+ nf(i,1)+ ".png";
         newImage = loadImage(file);
         newImage.resize(70,70);
         turtleleft[i] = newImage;
         
-        file = "turtledown_0"+ nf(i,1)+ ".png";
+        file = "Sprites/turtledown_0"+ nf(i,1)+ ".png";
         newImage = loadImage(file);
         newImage.resize(70,70);
         turtledown[i] = newImage;
         
-        file = "turtleright_0"+ nf(i,1)+ ".png";
+        file = "Sprites/turtleright_0"+ nf(i,1)+ ".png";
         newImage = loadImage(file);
         newImage.resize(70,70);
         turtleright[i] = newImage;
