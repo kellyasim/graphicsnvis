@@ -6,7 +6,7 @@ HUD hud;
 boolean pause;
 int num_enemies, level;
 MapElement [] levels;
-
+MainMenu mm;
 // CODE TO RECORD
 //boolean isRecording = false;
 
@@ -23,13 +23,19 @@ void setup(){
   }
   hud = new HUD(player, 10);
   new_frame();
-  pause = false;
-  pause();
   sound = true;
+  pause = false;
+  mm = new MainMenu();
+  mm.display();
 }
 
 void draw(){
-  if(!pause && player.return_lives() > 0){
+  if(mm.is_active()){
+    mm.display();
+    println(mm.is_active());
+  }
+  
+  else if(!pause && player.return_lives() > 0){
     new_frame();
     player.move();
     //player.display();
@@ -52,6 +58,7 @@ void new_frame(){
       pause = true;
     }
     level++;
+    player.reset_pos();
   }
   
   player.display();
@@ -116,6 +123,7 @@ void sound(){
 }
 
 void keyPressed(){
+  println(key);
   if(key == 'p' || key == 'P'){
     pause();
   }
@@ -130,6 +138,10 @@ void keyPressed(){
   if (key == 'm' || key == 'M'){
     sound = !sound;
     sound();
+  }
+  
+  if(key == '1'){
+    mm.change_state();
   }
   
   // CODE TO RECORD

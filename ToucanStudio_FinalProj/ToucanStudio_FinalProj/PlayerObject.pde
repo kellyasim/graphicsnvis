@@ -169,4 +169,10 @@ class PlayerObject extends EntityObject {
           break;
       } 
     }
+    
+    void reset_pos(){
+      position.x = 500;
+      position.y = 500;
+    
+    }
 }
