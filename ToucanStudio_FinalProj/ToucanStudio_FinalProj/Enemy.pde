@@ -19,12 +19,12 @@ class Enemy extends EntityObject{
       //ellipseMode(CENTER);
       //ellipse(position.x, position.y, radius, radius);
       
-      //graphical representation of monster
-      image(frame, position.x-35, position.y-35);
-      
       //hitbox
       //rectMode(CENTER);
-      //rect(position.x, position.y, 50,50);
+      rect(position.x-35, position.y-35, 50,50);
+      
+      //graphical representation of monster
+      image(frame, position.x-35, position.y-35);         
     }
     else{
       position.x = -100;

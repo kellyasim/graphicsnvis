@@ -72,43 +72,50 @@ class PlayerObject extends EntityObject {
 
     PVector attack(){
     
-    if(isUp){
-      swing_direction.x = position.x;
-          swing_direction.y = position.y - 70;
-          swing_render = swing_direction;
-          direction = 0;
-    }
-    if(isLeft){
-          swing_direction.x = position.x - 70;
-          swing_direction.y = position.y;
-          swing_render = swing_direction;
-          direction = 1;
-    }
-    if(isDown){
+      switch(direction){
+        case 0:
           swing_direction.x = position.x;
-          swing_direction.y = position.y + 70;
-          swing_render = position;
-          direction = 2;
+              swing_direction.y = position.y - 70;
+              swing_render = swing_direction;
+
+              break;
+        case 1:
+              swing_direction.x = position.x - 70;
+              swing_direction.y = position.y;
+              swing_render = swing_direction;
+
+              break;
+        case 2:
+              swing_direction.x = position.x;
+              swing_direction.y = position.y + 70;
+              swing_render = position;
+
+              break;
+        case 3:
+              swing_direction.x = position.x + 70;
+              swing_direction.y = position.y;
+              swing_render = position;
+
+              break;
+        default:
+          break;
     }
-    if(isRight){
-          swing_direction.x = position.x + 70;
-          swing_direction.y = position.y;
-          swing_render = position;
-          direction = 3;
-    }
-    
-    image(weapon[direction], swing_render.x, swing_render.y);
-    return(swing_direction);
+      
+      image(weapon[direction], swing_render.x, swing_render.y);
+      return(swing_direction);
 
     }
 
     void move() {
         int r = 50 >> 1;
-        position.x = constrain(position.x + speed * (int(isRight) - int(isLeft)), r, width - r);
-        position.y = constrain(position.y + speed * (int(isDown) - int(isUp)), r, height - r);
+        position.x = constrain(position.x + speed * (int(isRight) - int(isLeft)), 0, 936);
+        position.y = constrain(position.y + speed * (int(isDown) - int(isUp)), 0, 736);
     }
 
     int animate(int val, int location) {
+      //hitbox check
+      rect(position.x, position.y, 64, 64);
+      
         sX = val;
         sY = location;
         if (sX > 192) {
@@ -123,6 +130,7 @@ class PlayerObject extends EntityObject {
         } else {
             return sX;
         }
+        
     }
 
 
@@ -131,21 +139,26 @@ class PlayerObject extends EntityObject {
             case 'W':
             case UP:
                 row = 192;
+                direction = 0;
                 return isUp = b;
 
+                  
             case 'S':
             case DOWN:
                 row = 0;
+                direction = 2;
                 return isDown = b;
 
             case 'A':
             case LEFT:
                 row = 64;
+                direction = 1;
                 return isLeft = b;
 
             case 'D':
             case RIGHT:
                 row = 128;
+                direction = 3;
                 return isRight = b;
 
             default:
