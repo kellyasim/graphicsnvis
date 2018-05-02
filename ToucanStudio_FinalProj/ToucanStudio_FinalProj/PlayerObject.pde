@@ -114,7 +114,7 @@ class PlayerObject extends EntityObject {
 
     int animate(int val, int location) {
       //hitbox check
-      rect(position.x, position.y, 64, 64);
+      //rect(position.x, position.y, 64, 64);
       
         sX = val;
         sY = location;

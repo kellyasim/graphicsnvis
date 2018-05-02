@@ -14,7 +14,7 @@ class ItemElement{
   
   void display(){
     if(screentime > 0){
-      rect(position.x, position.y, 50,50);
+      //rect(position.x, position.y, 50,50);
       image(img, position.x, position.y);
       screentime-=1;
     }

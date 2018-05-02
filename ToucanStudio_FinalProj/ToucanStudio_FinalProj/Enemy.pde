@@ -21,7 +21,7 @@ class Enemy extends EntityObject{
       
       //hitbox
       //rectMode(CENTER);
-      rect(position.x-35, position.y-35, 50,50);
+      //rect(position.x-35, position.y-35, 50,50);
       
       //graphical representation of monster
       image(frame, position.x-35, position.y-35);         

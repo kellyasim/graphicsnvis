@@ -22,8 +22,10 @@ class MainMenu{
     
     textSize(100);
     noFill();
+    stroke(4);
     strokeWeight(4);
     rect(280,700,350,150);
+    noStroke();
     fill(255);
     text("START",300,800);
   }
