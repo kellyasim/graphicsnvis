@@ -1,23 +1,37 @@
-Dungeon Crawler
+Dungeon Horde Game
 
-Our initial game project was going to be a dungeon crawler game. The player was going to be able to move throughout different room, collect items, possibly solve small puzzles, etc. However, it ended up being too much work for the amount of time we had so instead we just coded out a combat system. We implemented movement, health, damage, lives, and enemies. For our final project we are going to make the original dungeon crawler we had imagined. 
-
-
-To be Updated:
-- Keyboard interactivity. The project must support keystrokes, which trigger some interesting functionality.
-> Need to make interactivity smoother and allow for multiple keys to be pressed, maybe add another set of move keys (arrow keys)
-- Multiple GUI systems. The project must have at least two GUI systems. This could be a "main menu" screen with buttons and display information, and at least one other screen that includes buttons and display information.
-> Already have the pause screen and heads-up display, will need to update with new controls, add buttons, and main menu?
-- Class objects with animation hierarchies. The project must include objects with at least two levels of animation hierarchy (similar to what you created in Assignment 4).
-> Whole new set of sprites and animations
-
-To be Added:
-- Data input/output. This can be data from a data set, user-created data to provide settings (e.g. a map-builder that generates a level map based on a XML or text file), or data saved from the application (e.g. high scores).
->The user will be able to create a save state in order to save their progress. Need alternate menu screens to reflect the possibility of loading a previously saved file
-- Sound. The project must include some use of sound, but this sound should be mutable (toggled by the user with either a keystroke or GUI button).
-	> background music
+Our game is designed to be a horde style game where the enemies are able to flock towards the player if they get too close (distance proximity). The player will be able to collect items to heal(apple), increase lives (heart), and increase attack (sword). We implemented movement, health, damage, lives, new sprites, a main menu and the ability to toggle sound (fitted with a speaker sprite in the bottom right corner). 
 
 
-Abel - working on updating existing code to update features, adding xbox controller support 
-Kelly - Save state, sprites, sound
-Bongani - multiple rooms, items, level design
+- Keyboard interactivity- allows for multiple keys to be pressed. 
+>'w' or "up arrow" to move up
+>'a' or "left arrow" to move left
+>'s' or "down arrow" to move down
+>'d' or "right arrow" to move right
+>'j' to attack
+>'p' for tutorial/pause screen
+>'r' to restart the game
+>'m' to mute sound
+
+
+- Multiple GUI systems. 
+>main menu with start button
+>pause screen (toggle with 'p' key)
+>end game screen (toggle with 'r' key)
+
+
+- Class objects with animation hierarchies
+>TODO HELLA IMPORTANT NEED TO ADD
+
+
+- Data input/output
+>JSON file of high scores that allows for an overall public ranking system as well as a local, searchable ranking system. Will be linked to a server hosted on DigitalOcean and accesssed with a link on the end game screen
+
+
+- Sound
+> background music pulled from a Pokemon game (.wav format)can be toggled with the 'm' key and the speaker sprite will switch to match either soundOn(speaker with sound)/soundOff(muted speaker)
+
+
+Abel - items, main menu
+Kelly - sprites, sound toggle, GUI display arrangement
+Bongani - high score ranking file

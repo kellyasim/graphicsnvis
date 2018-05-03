@@ -26,12 +26,12 @@ void setup(){
   sound = true;
   pause = false;
   mm = new MainMenu();
-  mm.display();
+  mm.animate();
 }
 
 void draw(){
   if(mm.is_active()){
-    mm.display();
+    mm.animate();
     println(mm.is_active());
   }
   
@@ -114,10 +114,10 @@ void sound(){
   PImage soundOn = loadImage ("Sprites/soundOn.png");
   soundOn.resize(70,50);
   if (sound){
-    image(soundOn, 900,850);
+    image(soundOn, 900,930);
     bkgdSound.play();
   }else{
-    image(mute, 900,850);
+    image(mute, 900,930);
     bkgdSound.stop();
   }
 }
