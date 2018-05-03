@@ -140,17 +140,17 @@ void keyPressed(){
     sound = !sound;
     sound();
   }
-  
-  if(key == '1'){
-    mm.change_state();
-  }
-  
+   
   // CODE TO RECORD
   //if(key == 'r' || key == 'R'){
   //  isRecording = !isRecording;
   //}
   player.setMove(keyCode, true);
 }
+void mouseClicked(){
+    mm.change_state();
+}
+
 
 void keyReleased() {
   player.setMove(keyCode, false);
