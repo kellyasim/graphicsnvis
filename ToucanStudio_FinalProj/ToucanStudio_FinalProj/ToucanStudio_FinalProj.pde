@@ -60,7 +60,8 @@ void draw(){
 void new_frame(){
   levels[level].display();
   num_enemies = levels[level].return_num_enemies();
-  hud.display(num_enemies, level);
+  endtime = millis();
+  hud.display(num_enemies, level, endtime-starttime);
   if(num_enemies == 0){
     if(level == 2){
       endtime = millis();

@@ -7,7 +7,7 @@ class HUD{
     num_enemies = n;
   }
   
-  void display(int num_enemies, int level){
+  void display(int num_enemies, int level, int time){
     hp = player.return_hp();
     fill(150);
    // rectMode(CORNER);
@@ -40,6 +40,9 @@ class HUD{
     for(int i=0;i<num_enemies;i++){
       ellipse(60*i+250, 920, 50,50); 
     }
+    
+    text(time/1000, 50,50);
+    println(time/1000);
     
     fill(255);
     ellipseMode(CENTER);
