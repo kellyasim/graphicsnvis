@@ -44,8 +44,8 @@ class EntityObject{
       position.y = 25;
       return false;
     }
-    if(position.y+25>800){
-      position.y = 775;
+    if(position.y+25>700){
+      position.y = 675;
       return false;
     }
     

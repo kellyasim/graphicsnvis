@@ -23,26 +23,19 @@ class HUD{
     textSize (30);
     
     textSize(30);
-    text("hp  "+ hp,25,850);
+    text("hp  "+ hp,35,850);
     fill(0,0,255);
     text("level  "+(level+1), 500, 850); 
-    text("lives  ",25, 900);
-    text("enemies  ", 25, 960);
+    text("time  "+time/1000, 500,900);
+    text("lives  ",35, 950);
+    text("enemies left  "+num_enemies, 35, 900);
     fill(255, 0, 0);
     ellipseMode(CORNER);
     PImage heart = loadImage("Sprites/heart.png");
     heart.resize(50,50);
     for(int i=0;i<player.return_lives();i++){
-      image(heart, 60*i+160,860);      
+      image(heart, 55*i+170,910);      
     }
-    
-    fill(0,255,0);
-    for(int i=0;i<num_enemies;i++){
-      ellipse(60*i+250, 920, 50,50); 
-    }
-    
-    text(time/1000, 50,50);
-    println(time/1000);
     
     fill(255);
     ellipseMode(CENTER);

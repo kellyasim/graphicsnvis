@@ -109,7 +109,7 @@ class PlayerObject extends EntityObject {
     void move() {
         int r = 50 >> 1;
         position.x = constrain(position.x + speed * (int(isRight) - int(isLeft)), 0, 936);
-        position.y = constrain(position.y + speed * (int(isDown) - int(isUp)), 0, 736);
+        position.y = constrain(position.y + speed * (int(isDown) - int(isUp)), 0, 700);
     }
 
     int animate(int val, int location) {

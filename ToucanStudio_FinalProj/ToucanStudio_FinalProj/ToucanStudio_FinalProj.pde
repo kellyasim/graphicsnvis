@@ -13,6 +13,7 @@ int starttime, endtime;
 //boolean isRecording = false;
 PFont font;
 
+
 void setup(){
   
   bkgdSound = new SoundFile(this, "PkmonCave.wav");
@@ -32,6 +33,8 @@ void setup(){
   mm = new MainMenu();
   nm = new NameMenu();
   mm.animate();
+  
+
 }
 
 void draw(){
@@ -66,7 +69,7 @@ void new_frame(){
     if(level == 2){
       endtime = millis();
       text("YOU WIN", 100,100);
-      text("'R' to restart", 100, 150);
+      text("R to restart", 100, 150);
       pause = true;
       println("***************end time*****************");
       println(endtime - starttime);
@@ -74,7 +77,7 @@ void new_frame(){
     level++;
     player.reset_pos();
   }
-  
+
   player.display();
 }
 
