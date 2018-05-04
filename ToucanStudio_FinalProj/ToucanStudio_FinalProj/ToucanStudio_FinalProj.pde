@@ -40,7 +40,6 @@ void setup(){
 void draw(){
   if(mm.is_active()){
     mm.animate();
-    println(mm.is_active());
   }
   
   else if(nm.active) {
@@ -95,7 +94,7 @@ void pause(){
   toucan.resize(70,70);
   image(toucan,60,168);
   
-  text("ToucanStudios Presents:", 100,250);
+  text("ToucanStudios Presents", 100,250);
 
   font = createFont("8-BITWONDER.TTF", 24);
   textFont(font);
@@ -147,7 +146,6 @@ void sound(){
 }
 
 void keyPressed(){
-  println(key);
   if(key == 'p' || key == 'P'){
     pause();
   }
