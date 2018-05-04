@@ -19,7 +19,7 @@ class MapElement{
   
   
   MapElement(PlayerObject p, int num_enemies){
-    bkgd = loadImage("Sprites/sand_bkgd.jpg");
+    bkgd = loadImage("Sprites/background.png");
     imgCt = 6;
     
     power_ups = new ItemElement[3];
@@ -73,17 +73,6 @@ class MapElement{
     //rectMode(CORNER);
     //rect(0,0,1000,800);
     image(bkgd,0,0); 
-    image(bkgd,280,0); 
-    image(bkgd,560,0); 
-    image(bkgd,840,0); 
-    image(bkgd,0,280); 
-    image(bkgd,280,280); 
-    image(bkgd,560,280); 
-    image(bkgd,840,280); 
-    image(bkgd,0,560); 
-    image(bkgd,280,560); 
-    image(bkgd,560,560); 
-    image(bkgd,840,560); 
     
     if(frameCount % 500 == 0){
       spawn_powerup();

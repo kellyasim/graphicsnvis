@@ -8,6 +8,7 @@ int num_enemies, level;
 MapElement [] levels;
 MainMenu mm;
 NameMenu nm;
+int starttime, endtime;
 // CODE TO RECORD
 //boolean isRecording = false;
 PFont font;
@@ -62,9 +63,12 @@ void new_frame(){
   hud.display(num_enemies, level);
   if(num_enemies == 0){
     if(level == 2){
+      endtime = millis();
       text("YOU WIN", 100,100);
       text("'R' to restart", 100, 150);
       pause = true;
+      println("***************end time*****************");
+      println(endtime - starttime);
     }
     level++;
     player.reset_pos();
@@ -169,6 +173,7 @@ void mouseClicked(){
       nm.active = !nm.active;
     }
     nm.change_state();
+    starttime = millis();
 }
 
 

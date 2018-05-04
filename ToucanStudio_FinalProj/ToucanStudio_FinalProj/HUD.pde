@@ -10,8 +10,8 @@ class HUD{
   void display(int num_enemies, int level){
     hp = player.return_hp();
     fill(150);
-    rectMode(CORNER);
-    rect(0,800,1000,200);
+   // rectMode(CORNER);
+    //rect(0,800,1000,200);
     fill(0,0,255);
     if(hp<=40){
       fill(255,0,0);
