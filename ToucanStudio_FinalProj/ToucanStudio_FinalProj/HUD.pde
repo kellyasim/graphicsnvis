@@ -16,14 +16,18 @@ class HUD{
     if(hp<=40){
       fill(255,0,0);
     }
+    
+    
+  font = createFont("8-BITWONDER.TTF", 24);
+  textFont(font);
     textSize (30);
     
-    textSize(50);
-    text("hp: "+ hp,25,850);
+    textSize(30);
+    text("hp  "+ hp,25,850);
     fill(0,0,255);
-    text("level: "+(level+1), 500, 850); 
-    text("lives: ",25, 900);
-    text("enemies: ", 25, 960);
+    text("level  "+(level+1), 500, 850); 
+    text("lives  ",25, 900);
+    text("enemies  ", 25, 960);
     fill(255, 0, 0);
     ellipseMode(CORNER);
     PImage heart = loadImage("Sprites/heart.png");

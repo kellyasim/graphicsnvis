@@ -24,7 +24,7 @@ class PlayerObject extends EntityObject {
         sX = 64;
         sY = 64;
         s = 0;
-        sprite = loadImage("Sprites/sprite_boy.png");
+        sprite = loadImage("Sprites/sprite_girl.png");
         speed = 5;
         lives = 3;
         damage = 25;

@@ -7,14 +7,17 @@ boolean pause;
 int num_enemies, level;
 MapElement [] levels;
 MainMenu mm;
+NameMenu nm;
 // CODE TO RECORD
 //boolean isRecording = false;
+PFont font;
 
 void setup(){
+  
   bkgdSound = new SoundFile(this, "PkmonCave.wav");
   bkgdSound.play();
   size(1000,1000);
-  frameRate(20);
+  frameRate(30);
   player = new PlayerObject(100,500,500);
   level = 0;
   levels = new MapElement[3];
@@ -26,6 +29,7 @@ void setup(){
   sound = true;
   pause = false;
   mm = new MainMenu();
+  nm = new NameMenu();
   mm.animate();
 }
 
@@ -35,7 +39,12 @@ void draw(){
     println(mm.is_active());
   }
   
-  else if(!pause && player.return_lives() > 0){
+  else if(nm.active) {
+    nm.animate();
+  }
+  
+  
+  else if(!mm.active && !nm.active && !pause && player.return_lives() > 0){
     new_frame();
     player.move();
     //player.display();
@@ -70,7 +79,9 @@ void pause(){
   rect(500,500,1000,1000);
   fill(230);
   noStroke();
-  textSize(48);
+  font = createFont("8-BITWONDER.TTF", 24);
+  textFont(font);
+  textSize(24);
 
   PImage toucan = loadImage("Sprites/toucan.png");
   toucan.resize(70,70);
@@ -78,11 +89,15 @@ void pause(){
   
   text("ToucanStudios Presents:", 100,250);
 
-  textSize(120);
+  font = createFont("8-BITWONDER.TTF", 24);
+  textFont(font);
+  textSize(24);
   text("Turtlepond", 80,420);
   text("Adventures",230,520);
   
-  textSize(32);  
+  font = createFont("8-BITWONDER.TTF", 24);
+  textFont(font);
+  textSize(24);
   PImage wasd = loadImage ("Sprites/wasd.png");
   wasd.resize(200,140);
   image(wasd,70,600);
@@ -150,6 +165,10 @@ void keyPressed(){
 }
 void mouseClicked(){
     mm.change_state();
+    if(!mm.is_active()) {
+      nm.active = !nm.active;
+    }
+    nm.change_state();
 }
 
 
