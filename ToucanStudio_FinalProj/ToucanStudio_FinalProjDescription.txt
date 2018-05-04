@@ -33,5 +33,5 @@ Our game is designed to be a horde style game where the enemies are able to floc
 
 
 Abel - items, main menu, fixed loading sound file
-Kelly - sprites, animation,sound toggle, GUI display arrangement
-Bongani - high score ranking file
+Kelly - spritesheets, animation,sound toggle, GUI display arrangement
+Bongani - high score ranking file, complete overhaul of sprites, coding in spritesheets
