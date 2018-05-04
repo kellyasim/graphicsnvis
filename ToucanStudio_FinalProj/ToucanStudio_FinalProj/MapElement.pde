@@ -86,9 +86,6 @@ class MapElement{
       }   
     }
     
-    println("*******************");
-    println(player.damage);
-    println("**********************");
     
     //move enemies in the map
    

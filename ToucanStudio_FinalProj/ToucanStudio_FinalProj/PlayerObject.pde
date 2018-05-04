@@ -29,7 +29,7 @@ class PlayerObject extends EntityObject {
         lives = 3;
         damage = 25;
         swing_direction = new PVector(0, 0);
-        swing_render = swing_direction;
+        swing_render = new PVector(0,0);
         weapon = new PImage[4];
         for (int i = 0; i < 4; i++) {
             String file = "Sprites/bolt_" + nf(i, 1) + ".png";
@@ -74,27 +74,31 @@ class PlayerObject extends EntityObject {
     
       switch(direction){
         case 0:
-          swing_direction.x = position.x;
+              swing_direction.x = position.x;
               swing_direction.y = position.y - 70;
-              swing_render = swing_direction;
+              swing_render.x = swing_direction.x;
+              swing_render.y = swing_direction.y;
 
               break;
         case 1:
               swing_direction.x = position.x - 70;
               swing_direction.y = position.y;
-              swing_render = swing_direction;
+              swing_render.x = swing_direction.x;
+              swing_render.y = swing_direction.y;
 
               break;
         case 2:
               swing_direction.x = position.x;
-              swing_direction.y = position.y + 70;
-              swing_render = position;
+              swing_direction.y = position.y + 140;
+              swing_render.x = position.x;
+              swing_render.y = position.y + 70;
 
               break;
         case 3:
-              swing_direction.x = position.x + 70;
+              swing_direction.x = position.x + 140;
               swing_direction.y = position.y;
-              swing_render = position;
+              swing_render.x = position.x + 70;
+              swing_render.y = position.y;
 
               break;
         default:
@@ -102,6 +106,10 @@ class PlayerObject extends EntityObject {
     }
       
       image(weapon[direction], swing_render.x, swing_render.y);
+      println("**************attacked************");
+      println(position.x, " ", position.y);
+      println(swing_render.x, " ", swing_render.y);
+      println(swing_direction.x, " ", swing_direction.y);
       return(swing_direction);
 
     }
@@ -109,7 +117,7 @@ class PlayerObject extends EntityObject {
     void move() {
         int r = 50 >> 1;
         position.x = constrain(position.x + speed * (int(isRight) - int(isLeft)), 0, 936);
-        position.y = constrain(position.y + speed * (int(isDown) - int(isUp)), 0, 700);
+        position.y = constrain(position.y + speed * (int(isDown) - int(isUp)), 0, 736);
     }
 
     int animate(int val, int location) {
@@ -162,7 +170,7 @@ class PlayerObject extends EntityObject {
                 return isRight = b;
 
             default:
-                row = (isDown)? 0 : 192;
+                //row = (isDown)? 0 : 192;
                 return b;
         }
     }
