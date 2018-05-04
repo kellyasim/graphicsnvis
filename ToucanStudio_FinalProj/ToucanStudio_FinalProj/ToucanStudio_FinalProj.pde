@@ -69,6 +69,7 @@ void pause(){
   rectMode(CENTER);
   rect(500,500,1000,1000);
   fill(230);
+  noStroke();
   textSize(48);
 
   PImage toucan = loadImage("Sprites/toucan.png");

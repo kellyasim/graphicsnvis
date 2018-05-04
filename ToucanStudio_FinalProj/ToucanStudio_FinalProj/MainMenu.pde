@@ -4,6 +4,8 @@ class MainMenu{
   boolean rectOver = false;
   int rectX,rectY;
   color rectHighlight = 210;
+  int tailY = 0;
+  float yChange = 1;
   
   MainMenu(){}
   
@@ -14,7 +16,7 @@ class MainMenu{
     fill(50);
     PImage toucan = loadImage("Sprites/toucan.png");
     toucan.resize(70,70);
-    image(toucan,60,168);
+    image(toucan,58, 168);
   
     textSize(48);
     text("ToucanStudios Presents:", 100,250);
@@ -22,25 +24,60 @@ class MainMenu{
     textSize(120);
     text("Turtlepond", 80,420);
     text("Adventures",230,520);
-           
-    rectX = 280;
-    rectY = 690;
-    
+              
     if (rectOver){
       stroke(4);
       strokeWeight(4);
-      fill(rectHighlight);  // COLOR NOT CHANGING EVEN THOUGH LINE PRINTED
+      fill(rectHighlight);
     } else{
       noFill();
       noStroke();
     }
-
+    
+    rectX = 280;
+    rectY = 690;
     rect(rectX,rectY,350,150);
 
     fill(255);
     textSize(100);
     text("START",300,800);
     noFill();
+    pushMatrix();
+    drawFish();
+    scale(0.5);
+    drawFish();
+    scale(0.8);
+    drawFish();
+    tailY += yChange;
+    if (tailY > 1 || tailY < 0){
+      yChange = -yChange;
+      tailY += yChange;
+      println(tailY);
+    }
+    popMatrix();
+  }
+  
+  void drawFish(){
+    pushMatrix();
+    translate(mouseX,mouseY);
+    drawTail();
+    fill(#FFA83E);
+    strokeWeight(2);
+    stroke(#FF9F29);
+    triangle(0,0,40,40,40,-40);
+    stroke(0);
+    ellipse(20,0,5,5);
+    popMatrix();
+  }
+  
+  void drawTail(){
+    pushMatrix();
+    translate(0,tailY);
+    fill(#FFA83E);
+    strokeWeight(2);
+    stroke(#FF9F29);
+    triangle(40,tailY,50,tailY+10,50,tailY-10); 
+    popMatrix();
   }
   
   void update (int x, int y ){
