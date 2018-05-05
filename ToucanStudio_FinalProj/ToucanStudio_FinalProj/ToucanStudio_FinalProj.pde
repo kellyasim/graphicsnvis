@@ -13,9 +13,11 @@ int starttime, endtime;
 // boolean isRecording = false;
 PFont font;
 
+int clicked;
 
 void setup(){
-  
+    fill(#A7CFFF);
+  clicked = 0;
   bkgdSound = new SoundFile(this, "PkmonCave.wav");
   bkgdSound.play();
   size(1000,1000);
@@ -33,6 +35,7 @@ void setup(){
   mm = new MainMenu();
   nm = new NameMenu();
   mm.animate();
+  nm.active = false;
   
 
 }
@@ -42,9 +45,10 @@ void draw(){
     mm.animate();
   }
   
-  else if(nm.active) {
+  if(nm.is_active()) {
     nm.animate();
   }
+  
   
   
   else if(!mm.active && !nm.active && !pause && player.return_lives() > 0){
@@ -169,13 +173,21 @@ void keyPressed(){
   //}
   player.setMove(keyCode, true);
 }
+
+
+
 void mouseClicked(){
     mm.change_state();
-    if(!mm.is_active()) {
+    if(!mm.is_active() && clicked < 1) {
+      clicked++;
       nm.active = !nm.active;
+      println("dddddd");
     }
     nm.change_state();
-    starttime = millis();
+    if(!nm.is_active() && !mm.is_active() && clicked < 2) {
+      clicked++;
+      starttime = millis();
+    }
 }
 
 

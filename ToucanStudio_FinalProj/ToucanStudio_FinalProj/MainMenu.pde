@@ -47,7 +47,7 @@ class MainMenu{
     //  noStroke();
     //}
     
-    rectX = 280;
+    rectX = 292;
     rectY = 690;
     //rect(rectX,rectY,350,150);
 

@@ -16,6 +16,8 @@ class PlayerObject extends EntityObject {
     int row;
     boolean isMoving;
     
+    
+    
     PlayerObject(int health, int xpos, int ypos) {
         super(health, xpos, ypos);
         row = 192;
@@ -63,9 +65,10 @@ class PlayerObject extends EntityObject {
             s = animate(s, row);
         } else {
             fill(255, 0, 0);
-            textSize(100);
+            textSize(65);
             text("Game Over", 200, 400);
-            text("'R' to restart", 200, 500);
+            textSize(45);
+            text("Press R to restart", 100, 500);
             fill(255);
         }
     }
