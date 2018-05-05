@@ -14,13 +14,18 @@ class PlayerObject extends EntityObject {
     int sY;
     int s;
     int row;
+  int highTime;
+  int highLevel;
     boolean isMoving;
+    
     
     
     
     PlayerObject(int health, int xpos, int ypos) {
         super(health, xpos, ypos);
         row = 192;
+    highTime = 999999;
+    highLevel = 0;
         w = 64;
         h = 64;
         sX = 64;
@@ -60,7 +65,58 @@ class PlayerObject extends EntityObject {
         return lives;
     }
 
-    void display() {
+    void  saveTime(int time, int level) {
+      loadTime();
+      Table table = new Table();
+      
+      table.addColumn("time");
+      table.addColumn("level");
+      if((highLevel < level)) {
+        highTime = time;
+      } else if (highLevel == level) {
+      
+       highTime = (highTime <= time)? time : highLevel;
+      }
+      highLevel = (highLevel <= level)? level : highLevel;
+      TableRow newRow = table.addRow();
+      newRow.setInt("time", highTime);
+      newRow.setInt("level", highLevel);
+      
+      saveTable(table, "data/scores.csv");
+    }
+
+    void loadTime() {
+  
+    try{
+      Table table = loadTable("data/scores.csv", "header");
+  
+    println(table.getRowCount() + " total rows in table"); 
+  
+    if(table.getRowCount() > 0) {
+      for (TableRow row : table.rows()) {
+      
+      int time = row.getInt("time");
+      int level = row.getInt("level");
+      
+      if((highLevel < level)) {
+        highTime = time;
+      } else if (highLevel == level) {
+      
+       highTime = (highTime <= time)? time : highLevel;
+      }
+      highLevel = (highLevel <= level)? level : highLevel;
+      
+      println("Time " + time + "  LEVEL " + level);
+    }
+    }
+    } catch(Exception e) {
+      println("Nothing");
+    }
+    
+  }
+
+
+    void display(int time, int level) {
         if (alive) {
             s = animate(s, row);
         } else {
@@ -69,9 +125,14 @@ class PlayerObject extends EntityObject {
             text("Game Over", 200, 400);
             textSize(45);
             text("Press R to restart", 100, 500);
+            saveTime(time, level);
+              
+        }
+      
+            
             fill(255);
         }
-    }
+   
 
     PVector attack(){
     

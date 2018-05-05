@@ -25,8 +25,7 @@ Our game is designed to be a horde style game where the enemies are able to floc
 
 
 - Data input/output
->JSON file of high scores that allows for an overall public ranking system as well as a local, searchable ranking system. Will be linked to a server hosted on DigitalOcean and accesssed with a link on the end game screen
-
+>CSV file of high scores that allows for an local tracking of gaming progress
 
 - Sound
 > background music pulled from a Pokemon game (.wav format)can be toggled with the 'm' key and the speaker sprite will switch to match either soundOn(speaker with sound)/soundOff(muted speaker)
@@ -34,4 +33,4 @@ Our game is designed to be a horde style game where the enemies are able to floc
 
 Abel - items, main menu, fixed loading sound file
 Kelly - spritesheets, animation,sound toggle, GUI display arrangement
-Bongani - high score ranking file, complete overhaul of sprites, coding in spritesheets
+Bongani - high score ranking file, complete overhaul of sprites, coding in spritesheets, editing the animation hierarchy

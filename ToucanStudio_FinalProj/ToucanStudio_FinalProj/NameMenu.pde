@@ -13,7 +13,7 @@ class NameMenu{
     boolean flip;
     
     PImage chosen;
-    
+    boolean isGirl = true;
   NameMenu(){
     active = false;
     sprite1 = loadImage("Sprites/sprite_girl.png");
@@ -60,18 +60,20 @@ class NameMenu{
     PImage toucan = loadImage("Sprites/title.png");
     image(toucan,58, 168);
     
-    if(mouseX < 128 + 300 && mouseX > 300 && mouseY < 450 + 128 && mouseY > 450) {
+    if((mouseX < 128 + 300 && mouseX > 300 && mouseY < 450 + 128 && mouseY > 450) || isGirl) {
      copy(this.sprite1, sX, sY * c, w, h, 300, 450, 128, 128);
      if(mousePressed) {
        chosen = loadImage("Sprites/sprite_girl.png");
+       isGirl = true;
      }
    } else {
      copy(this.sprite1, sX, sY * 0, w, h, 300, 450, 128, 128);
    }
    
-   if(mouseX < 128 + 500 && mouseX > 500 && mouseY < 450 + 128 && mouseY > 450) {
+   if((mouseX < 128 + 500 && mouseX > 500 && mouseY < 450 + 128 && mouseY > 450) || !isGirl) {
      copy(this.sprite2, sX, sY * c, w, h, 500, 450 , 128, 128);
      if(mousePressed) {
+       isGirl = false;
        chosen = loadImage("Sprites/sprite_boy.png");
      }
    } else {

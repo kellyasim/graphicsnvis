@@ -16,7 +16,6 @@ PFont font;
 int clicked;
 
 void setup(){
-    fill(#A7CFFF);
   clicked = 0;
   bkgdSound = new SoundFile(this, "PkmonCave.wav");
   bkgdSound.play();
@@ -32,6 +31,7 @@ void setup(){
   new_frame();
   sound = true;
   pause = false;
+    background(#A7CFFF);
   mm = new MainMenu();
   nm = new NameMenu();
   mm.animate();
@@ -63,6 +63,21 @@ void draw(){
   //}
 }
 
+void  saveTime(int time, int level) {
+
+  Table table = new Table();
+  
+  table.addColumn("time");
+  table.addColumn("level");
+  
+  TableRow newRow = table.addRow();
+  newRow.setInt("time", time);
+  newRow.setInt("time", level);
+  
+  saveTable(table, "data/scores.csv");
+}
+
+
 void new_frame(){
   levels[level].display();
   num_enemies = levels[level].return_num_enemies();
@@ -74,18 +89,19 @@ void new_frame(){
       text("YOU WIN", 100,100);
       text("R to restart", 100, 150);
       pause = true;
+      saveTime(endtime - starttime,3);
       println("***************end time*****************");
       println(endtime - starttime);
     }
     level++;
     player.reset_pos();
   }
-
-  player.display();
+  println(this.level);
+  player.display( endtime - starttime, this.level + 1);
 }
 
 void pause(){
-  fill(0,0,0,190);
+    fill(#A7CFFF);
   rectMode(CENTER);
   rect(500,500,1000,1000);
   fill(230);
@@ -94,17 +110,17 @@ void pause(){
   textFont(font);
   textSize(24);
 
-  PImage toucan = loadImage("Sprites/toucan.png");
-  toucan.resize(70,70);
+  PImage toucan = loadImage("Sprites/title.png");
+  //toucan.resize(70,70);
   image(toucan,60,168);
   
-  text("ToucanStudios Presents", 100,250);
+  //text("ToucanStudios Presents", 100,250);
 
   font = createFont("8-BITWONDER.TTF", 24);
   textFont(font);
   textSize(24);
-  text("Turtlepond", 80,420);
-  text("Adventures",230,520);
+  //text("Turtlepond", 80,420);
+  //text("Adventures",230,520);
   
   font = createFont("8-BITWONDER.TTF", 24);
   textFont(font);
@@ -128,6 +144,7 @@ void pause(){
   r.resize(65,65);
   image(r,780,675);
   text("Restart", 760, 780);
+  
   
   // CODE TO RECORDS
   //text("'R' to start/stop recording", 100, 650);
@@ -167,6 +184,10 @@ void keyPressed(){
     sound();
   }
    
+   if (key == 'h' || key == 'H'){
+    link("http://processing.com");
+  }
+   
   // CODE TO RECORD
   //if(key == 'r' || key == 'R'){
   //  isRecording = !isRecording;
@@ -185,6 +206,7 @@ void mouseClicked(){
     }
     nm.change_state();
     if(!nm.is_active() && !mm.is_active() && clicked < 2) {
+      player.sprite = nm.chosen;
       clicked++;
       starttime = millis();
     }
