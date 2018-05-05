@@ -21,7 +21,7 @@ Our game is designed to be a horde style game where the enemies are able to floc
 
 
 - Class objects with animation hierarchies
->animated fish that follows the cursor with a subanimation that moves it's tail slightly up and down
+>animated turtles on the main menu move across the screen (main animation) and move appendages (sub animation) 
 
 
 - Data input/output
@@ -31,6 +31,6 @@ Our game is designed to be a horde style game where the enemies are able to floc
 > background music pulled from a Pokemon game (.wav format)can be toggled with the 'm' key and the speaker sprite will switch to match either soundOn(speaker with sound)/soundOff(muted speaker)
 
 
-Abel - items, main menu, fixed loading sound file
+Abel - items, main menu, fixed loading sound file, combat, controls
 Kelly - spritesheets, animation,sound toggle, GUI display arrangement
 Bongani - high score ranking file, complete overhaul of sprites, coding in spritesheets, editing the animation hierarchy

@@ -1,7 +1,0 @@
-TODO:
-- Data Stuff -> keep high score (based time), site to view high scores
-- Main Menu / Restart
-- background
-- update HUD
-- Bug where gary goes off screen
-- add more levels

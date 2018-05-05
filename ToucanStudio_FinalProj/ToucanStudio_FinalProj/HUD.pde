@@ -62,7 +62,7 @@ void loadTime() {
     fill(0,0,255);
     text("level  "+(level+1), 500, 850); 
     text("time  "+(time/1000)+" sec", 500,900);
-    text("best "+(highTime/1000)+" sec/L"+highLevel, 500,950);
+    text("best "+(highTime/1000)+" sec L"+highLevel, 500,950);
     text("lives  ",35, 950);
     text("enemies left  "+num_enemies, 35, 900);
     fill(255, 0, 0);
