@@ -1,6 +1,6 @@
 Dungeon Horde Game
 
-Our game is designed to be a horde style game where the enemies are able to flock towards the player if they get too close (distance proximity). The player will be able to collect items to heal(apple), increase lives (heart), and increase attack (sword). We implemented movement, health, damage, lives, new sprites, a main menu and the ability to toggle sound (fitted with a speaker sprite in the bottom right corner). 
+Our game is designed to be a horde style game where the enemies are able to flock towards the player if they get too close (distance proximity). The player will be able to collect items to heal(apple), increase lives (heart), and increase attack (sword). We implemented movement, health, damage, lives, new sprites, a main menu and the ability to toggle sound (fitted with a speaker sprite in the bottom right corner), and score tracking. 
 
 
 - Keyboard interactivity- allows for multiple keys to be pressed. 
@@ -16,8 +16,9 @@ Our game is designed to be a horde style game where the enemies are able to floc
 
 - Multiple GUI systems. 
 >main menu with start button
+>character select screen
 >pause screen (toggle with 'p' key)
->end game screen (toggle with 'r' key)
+>Heads up display at the bottom of the play screen
 
 
 - Class objects with animation hierarchies
@@ -28,7 +29,7 @@ Our game is designed to be a horde style game where the enemies are able to floc
 >CSV file of high scores that allows for an local tracking of gaming progress
 
 - Sound
-> background music pulled from a Pokemon game (.wav format)can be toggled with the 'm' key and the speaker sprite will switch to match either soundOn(speaker with sound)/soundOff(muted speaker)
+> background music pulled from a Pokemon game (.wav format) can be toggled with the 'm' key and the speaker sprite will switch to match either soundOn(speaker with sound)/soundOff(muted speaker)
 
 
 Abel - items, main menu, fixed loading sound file, combat, controls
